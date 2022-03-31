@@ -15,7 +15,7 @@ private:
     float capacity;
     string transmission;
     bool booked = false;
-    Rental rentList[3];
+    Rental rentList[3]; //unsure if i need to create dynamic list? if done this way there is error as there is no default constructor for Rental
 public:
     Car();
     Car(string, string, double, double, float, string);
