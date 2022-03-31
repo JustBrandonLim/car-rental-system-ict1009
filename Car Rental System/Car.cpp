@@ -58,6 +58,7 @@ void Car::displayInfo(){
     cout << "Daily Rate: " << dayRate << "/day" << endl;
 }
 
+//undone as need to find a way to access rentList to see if person rent before calculating
 double Car::calculateRate(){
   
 }
