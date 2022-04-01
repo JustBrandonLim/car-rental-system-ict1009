@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Account">
       <UniqueIdentifier>{b53dba8e-37eb-4f3c-8662-85136a42aa0f}</UniqueIdentifier>
     </Filter>
@@ -21,25 +13,32 @@
     <Filter Include="Insurance">
       <UniqueIdentifier>{ef4402e8-8eb6-409e-aa7f-38c4056b7fd8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="InjuryInsurance">
+    <Filter Include="Rental">
+      <UniqueIdentifier>{71383aed-b8e3-45cc-951c-81b087dea8e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="to-organize">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Insurance\FullCoverageInsurance">
+      <UniqueIdentifier>{dd89436a-eba1-4288-b97a-dcc42c5ca535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Insurance\InjuryInsurance">
       <UniqueIdentifier>{0bdc9b49-b619-4f6e-a2fd-472c61c78906}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TheftInsurance">
+    <Filter Include="Insurance\CollisionInsurance">
+      <UniqueIdentifier>{25a08d68-f812-4723-b7bb-05ec22255413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Insurance\TheftInsurance">
       <UniqueIdentifier>{9f16d94c-2aa7-4e31-aa83-d8dc59cd28d2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rental.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>to-organize</Filter>
     </ClCompile>
     <ClCompile Include="Car.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>to-organize</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
       <Filter>Account</Filter>
@@ -48,19 +47,14 @@
       <Filter>Insurance</Filter>
     </ClCompile>
     <ClCompile Include="InjuryInsurance.cpp">
-      <Filter>InjuryInsurance</Filter>
+      <Filter>Insurance\InjuryInsurance</Filter>
     </ClCompile>
+    <ClCompile Include="Rental.cpp">
+      <Filter>Rental</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Rental.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Car.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Account.h">
       <Filter>Account</Filter>
     </ClInclude>
@@ -68,7 +62,16 @@
       <Filter>Insurance</Filter>
     </ClInclude>
     <ClInclude Include="InjuryInsurance.h">
-      <Filter>InjuryInsurance</Filter>
+      <Filter>Insurance\InjuryInsurance</Filter>
+    </ClInclude>
+    <ClInclude Include="Rental.h">
+      <Filter>Rental</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>to-organize</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>to-organize</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
