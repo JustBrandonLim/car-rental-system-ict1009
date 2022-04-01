@@ -9,22 +9,66 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Account">
+      <UniqueIdentifier>{b53dba8e-37eb-4f3c-8662-85136a42aa0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Account\AdminAccount">
+      <UniqueIdentifier>{bf7e5ce6-8053-4fdd-8a4d-983c7b87f518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Account\CustomerAccount">
+      <UniqueIdentifier>{b8e77359-edff-49fb-9748-f17823cf566c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Insurance">
+      <UniqueIdentifier>{ef4402e8-8eb6-409e-aa7f-38c4056b7fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InjuryInsurance">
+      <UniqueIdentifier>{0bdc9b49-b619-4f6e-a2fd-472c61c78906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TheftInsurance">
+      <UniqueIdentifier>{9f16d94c-2aa7-4e31-aa83-d8dc59cd28d2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Car Rental System.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rental.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Account.cpp">
+      <Filter>Account</Filter>
+    </ClCompile>
+    <ClCompile Include="Insurance.cpp">
+      <Filter>Insurance</Filter>
+    </ClCompile>
+    <ClCompile Include="InjuryInsurance.cpp">
+      <Filter>InjuryInsurance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rental.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Account</Filter>
+    </ClInclude>
+    <ClInclude Include="Insurance.h">
+      <Filter>Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="InjuryInsurance.h">
+      <Filter>InjuryInsurance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

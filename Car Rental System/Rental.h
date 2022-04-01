@@ -15,6 +15,7 @@ private:
 	string startDate;
 	string endDate;
 public:
+	Rental();
 	Rental(Account, string, string);
 	Account getRentedBy();
 	string getStartDate();
