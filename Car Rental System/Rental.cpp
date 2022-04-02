@@ -1,23 +1,19 @@
 #include "Rental.h"
 
-Rental::Rental(Account account, string startDate, string endDate)
+Rental::Rental(int hours, double totalPayable)
 {
-	this->rentedBy = account;
-	this->startDate = startDate;
-	this->endDate = endDate;
+	this->hours = hours;
+	this->totalPayable = totalPayable;
 }
 
-Account Rental::getRentedBy()
-{
-	return this->rentedBy;
+int Rental::getHours() {
+	return hours;
 }
 
-string Rental::getStartDate()
-{
-	return this->startDate;
+void Rental::selectHours(int hours) {
+	this->hours = hours;
 }
 
-string Rental::getEndDate()
-{
-	return this->endDate;
+double Rental::getTotalPayable() {
+	return totalPayable;
 }
