@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "Rental.h"
 
 using namespace std;
@@ -7,28 +8,24 @@ using namespace std;
 class Rental;
 
 class Car{
+    friend void addRental(Car, int);
 private:
     string model;
     string plateNum;
     double hourRate;
-    double dayRate;
-    float capacity;
-    string transmission;
-    bool booked = false;
-    Rental rentList[3]; //unsure if i need to create dynamic list? if done this way there is error as there is no default constructor for Rental
+    vector <Rental> rentals;
+    bool servicing = false;
+    double insurance;
 public:
     Car();
-    Car(string, string, double, double, float, string);
+    Car(string, string, double, double);
     ~Car(){cout << model << " deleted" << endl;}
-    void setBooked();
-    void setRental(Rental);
+    void setServicing();
     string getModel();
     string getPlateNum();
+    vector <Rental> getRentals();
     double getHourRate();
-    double getDayRate();
-    float getCapacity();
-    string getTransmission();
-    bool getBooked();
+    bool getServicing();
     void displayInfo();
-    double calculateRate();
+    void displayRentals();
 };
