@@ -1,64 +1,31 @@
-#include "Car.h"
+#pragma once
+#include <iostream>
+#include <vector>
+#include "Rental.h"
 
-Car::Car(string model, string plateNum, double dayRate, double hourRate, float capacity, string transmission){
-    this->model = model;
-    this->plateNum = plateNum;
-    this->dayRate = dayRate;
-    this->hourRate = hourRate;
-    this->capacity = capacity;
-    this->transmission = transmission;
-}
+using namespace std;
 
-void Car::setBooked(){
-  if (this->booked == false)
-    this->booked = true;
-  else
-    this->booked = false;
-}
+class Rental;
 
-void Car::setRental(Rental rent){
-  int i = 0;
-  rentList[i] = rent;
-}
-
-string Car::getModel(){
-  return model;
-}
-
-string Car::getPlateNum(){
-  return plateNum;
-}
-
-double Car::getHourRate(){
-  return hourRate;
-}
-
-double Car::getDayRate(){
-  return dayRate;
-}
-
-float Car::getCapacity(){
-  return capacity;
-}
-
-string Car::getTransmission(){
-  return transmission;
-}
-
-bool Car::getBooked(){
-  return booked;
-}
-
-void Car::displayInfo(){
-    cout << "Car Model: " << model << endl;
-    cout << "Car Plate Number: " << plateNum << endl;
-    cout << "Capacity: " << capacity << endl;
-    cout << "Transmission: " << transmission << endl;
-    cout << "Hourly Rate: " << hourRate << "/hr" << endl;
-    cout << "Daily Rate: " << dayRate << "/day" << endl;
-}
-
-//undone as need to find a way to access rentList to see if person rent before calculating
-double Car::calculateRate(){
-  
-}
+class Car{
+    friend void addRental(Car, int);
+private:
+    string model;
+    string plateNum;
+    double hourRate;
+    vector <Rental> rentals;
+    bool servicing = false;
+    double insurance;
+public:
+    Car();
+    Car(string, string, double, double);
+    ~Car(){cout << model << " deleted" << endl;}
+    void setServicing();
+    string getModel();
+    string getPlateNum();
+    vector <Rental> getRentals();
+    double getHourRate();
+    bool getServicing();
+    void displayInfo();
+    void displayRentals();
+};
