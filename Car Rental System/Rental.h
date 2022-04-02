@@ -11,14 +11,13 @@ class Account;
 class Rental
 {
 private:
-	Account rentedBy;
-	string startDate;
-	string endDate;
+	int hours;
+	double totalPayable;
+
 public:
 	Rental();
-	Rental(Account, string, string);
-	Account getRentedBy();
-	string getStartDate();
-	string getEndDate();
+	Rental(int, double);
+	int getHours();
+	void selectHours(int);
+	double getTotalPayable();
 };
-
