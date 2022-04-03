@@ -1,12 +1,5 @@
 #include "Car.h"
 
-/*
-void addRental(Car car, int hours) {
-    int payable = car.hourRate * hours;
-    Rental myRental(hours, payable);
-    car.rentals.push_back(myRental);
-}*/
-
 Car::Car(std::string model, std::string plateNum, double hourluRate, double insurance){
     this->model = model;
     this->plateNumber = plateNumber;
@@ -36,11 +29,7 @@ double Car::getHourlyRate(){
 bool Car::getServicing() {
     return servicing;
 }
-/*
-vector <Rental> Car::getRentals() {
-    return rentals;
-}
-*/
+
 void Car::displayInfo() {
     std::cout << "Car Model: " << model << std::endl;
     std::cout << "Car Plate Number: " << plateNumber << std::endl;
@@ -57,6 +46,10 @@ bool Car::operator>(Car x) {
 }
 
 /*
+vector <Rental> Car::getRentals() {
+    return rentals;
+}
+
 void Car::displayRentals() {
     std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
     for (int i = 0; i < rentals.size(); i++) {
