@@ -1,9 +1,7 @@
 #pragma once
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include "Rental.h"
-
-//using namespace std;
 
 class Rental;
 
@@ -11,9 +9,9 @@ class Car{
     friend void addRental(Car, int);
 private:
     std::string model;
-    std::string plateNum;
+    std::string plateNumber;
     double hourlyRate;
-    vector <Rental> rentals;
+    //vector <Rental> rentals;
     bool servicing = false;
     double insurance;
 public:
@@ -27,6 +25,6 @@ public:
     double getHourlyRate();
     bool getServicing();
     void displayInfo();
-    void displayRentals();
+    //void displayRentals();
     bool operator >(Car);
 };
