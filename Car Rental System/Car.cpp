@@ -49,17 +49,17 @@ void Car::displayInfo() {
 
 }
 
+bool Car::operator>(Car x) {
+    return hourlyRate > x.hourlyRate ? true : false;
+}
+
+/*
 void Car::displayRentals() {
     std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
     for (int i = 0; i < rentals.size(); i++) {
         std::cout << model << "\t" << plateNumber << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
     }
 }
-
-bool Car::operator>(Car x) {
-    return hourlyRate > x.hourlyRate ? true : false;
-}
-/*
 double Car::getDayRate(){
   return dayRate;
 }
