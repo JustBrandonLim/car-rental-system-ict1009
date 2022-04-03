@@ -1,11 +1,13 @@
 #pragma once
 
+#include <vector>
 #include "CustomerAccount.h"
 #include "Car.h"
 
 #include "DateTime.h"
 
 class Account;
+class Car;
 
 class Rental
 {
@@ -15,6 +17,7 @@ private:
 	DateTime startDateTime;
 	DateTime endDateTime;
 	double totalFees;
+	//vector <accounts>;
 	//TODO: Insurance?
 public:
 	Rental();
