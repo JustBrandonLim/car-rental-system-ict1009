@@ -54,6 +54,10 @@ void Car::displayRentals() {
         cout << model << "\t" << plateNum << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << endl;
     }
 }
+
+bool Car::operator>(Car x) {
+    return hourRate > x.hourRate ? true : false;
+}
 /*
 double Car::getDayRate(){
   return dayRate;
