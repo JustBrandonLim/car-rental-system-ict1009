@@ -1,10 +1,11 @@
 #include "Car.h"
 
+/*
 void addRental(Car car, int hours) {
     int payable = car.hourRate * hours;
     Rental myRental(hours, payable);
     car.rentals.push_back(myRental);
-}
+}*/
 
 Car::Car(std::string model, std::string plateNum, double hourluRate, double insurance){
     this->model = model;
