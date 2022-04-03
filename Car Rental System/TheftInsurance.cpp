@@ -20,7 +20,29 @@ void TheftInsurance::submitStolenItems()
 
 	stolenItemsFile.open("stolenItems.txt", ios::out | ios::app);
 
-	stolenItemsFile << user << " " << stolenItems << endl;
+	stolenItemsFile << user << endl << stolenItems << endl;
+
+	stolenItemsFile.close();
+}
+
+void TheftInsurance::showStolenItems()
+{
+	std::string stolenItems, user, fileUser;
+
+	user = this->Insurance::getInsuranceOwner().getUsername();
+
+	std::ifstream stolenItemsFile;
+
+	stolenItemsFile.open("stolenItems.txt");
+
+	if (stolenItemsFile) {
+		while (getline(stolenItemsFile, fileUser)) {
+			if (fileUser == user) {
+				getline(stolenItemsFile, stolenItems);
+				cout << stolenItems << endl;
+			}
+		}
+	}
 
 	stolenItemsFile.close();
 }

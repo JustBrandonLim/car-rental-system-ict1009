@@ -12,5 +12,6 @@ class CollisionInsurance : virtual public Insurance
 public:
 	CollisionInsurance(Account, double, std::string);
 	void submitCarDamages();
+	void showCarDamages();
 };
 

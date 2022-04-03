@@ -12,5 +12,6 @@ class TheftInsurance : virtual public Insurance
 public:
 	TheftInsurance(Account, double, std::string);
 	void submitStolenItems();
+	void showStolenItems();
 };
 

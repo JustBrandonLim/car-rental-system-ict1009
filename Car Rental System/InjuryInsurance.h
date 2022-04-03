@@ -12,5 +12,6 @@ class InjuryInsurance : virtual public Insurance
 public:
 	InjuryInsurance(Account, double, std::string);
 	void submitInjuries();
+	void showInjuries();
 };
 
