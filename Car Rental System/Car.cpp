@@ -45,6 +45,9 @@ bool Car::operator>(Car x) {
     return hourlyRate > x.hourlyRate ? true : false;
 }
 
+bool Car::operator==(Car x) {
+    return plateNumber == x.plateNumber ? true : false;
+}
 /*
 vector <Rental> Car::getRentals() {
     return rentals;
