@@ -19,7 +19,7 @@ private:
 public:
     Car();
     Car(string, string, double, double);
-    ~Car(){} //cout << model << " deleted" << endl;}
+    ~Car(){}; //cout << model << " deleted" << endl;}
     void setServicing();
     string getModel();
     string getPlateNum();
