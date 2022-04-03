@@ -6,7 +6,7 @@ void addRental(Car car, int hours) {
     car.rentals.push_back(myRental);
 }
 
-Car::Car(string model, string plateNum, double hourRate, double insurance){
+Car::Car(std::string model, std::string plateNum, double hourRate, double insurance){
     this->model = model;
     this->plateNum = plateNum;
     this->hourRate = hourRate;
@@ -20,15 +20,15 @@ void Car::setServicing() {
         servicing = true;
 }
 
-string Car::getModel(){
+std::string Car::getModel(){
   return model;
 }
 
-string Car::getPlateNum(){
+std::string Car::getPlateNumber(){
   return plateNum;
 }
 
-double Car::getHourRate(){
+double Car::getHourlyRate(){
   return hourRate;
 }
 
@@ -39,20 +39,20 @@ vector <Rental> Car::getRentals() {
     return rentals;
 }
 void Car::displayInfo() {
-    cout << "Car Model: " << model << endl;
-    cout << "Car Plate Number: " << plateNum << endl;
-    cout << "Hourly Rate: " << hourRate << "/hr" << endl;
+    std::cout << "Car Model: " << model << std::endl;
+    std::cout << "Car Plate Number: " << plateNum << std::endl;
+    std::cout << "Hourly Rate: " << hourRate << "/hr" << std::endl;
     if (getServicing() == true)
-        cout << "Car due for servicing." << endl;
+        std::cout << "Car due for servicing." << std::endl;
     else
-        cout << "Car serviced." << endl;
+        std::cout << "Car serviced." << std::endl;
 
 }
 
 void Car::displayRentals() {
-    cout << "Car Name | Car Plate | Rental hours | Total Payable " << endl;
+    std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
     for (int i = 0; i < rentals.size(); i++) {
-        cout << model << "\t" << plateNum << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << endl;
+        std::cout << model << "\t" << plateNum << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
     }
 }
 
