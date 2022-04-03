@@ -3,28 +3,28 @@
 #include <vector>
 #include "Rental.h"
 
-using namespace std;
+//using namespace std;
 
 class Rental;
 
 class Car{
     friend void addRental(Car, int);
 private:
-    string model;
-    string plateNum;
+    std::string model;
+    std::string plateNum;
     double hourRate;
     vector <Rental> rentals;
     bool servicing = false;
     double insurance;
 public:
     Car();
-    Car(string, string, double, double);
+    Car(std::string, std::string, double, double);
     ~Car(){}; //cout << model << " deleted" << endl;}
     void setServicing();
-    string getModel();
-    string getPlateNum();
+    std::string getModel();
+    std::string getPlateNumber();
     vector <Rental> getRentals();
-    double getHourRate();
+    double getHourlyRate();
     bool getServicing();
     void displayInfo();
     void displayRentals();
