@@ -156,6 +156,7 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="CollisionInsurance.h" />
     <ClInclude Include="CustomerAccount.h" />
+    <ClInclude Include="DateTime.h" />
     <ClInclude Include="FullCoverageInsurance.h" />
     <ClInclude Include="InjuryInsurance.h" />
     <ClInclude Include="Insurance.h" />

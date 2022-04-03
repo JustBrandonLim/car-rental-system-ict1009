@@ -35,6 +35,9 @@
     <Filter Include="Rental\Rental">
       <UniqueIdentifier>{0d6dd4cd-0093-4deb-beea-27dfae955894}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Others">
+      <UniqueIdentifier>{d998f400-ad74-4f13-9fb0-27ceb8d1eede}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Menu.cpp">
@@ -102,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="Rental.h">
       <Filter>Rental\Rental</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Others</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
