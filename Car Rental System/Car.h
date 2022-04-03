@@ -12,7 +12,7 @@ class Car{
 private:
     std::string model;
     std::string plateNum;
-    double hourRate;
+    double hourlyRate;
     vector <Rental> rentals;
     bool servicing = false;
     double insurance;
