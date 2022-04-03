@@ -1,6 +1,19 @@
 #include <iostream>
+#include "Car.h"
 
 using namespace std;
+
+template<typename T>
+T compare(T car1, T car2, int hours) {
+	if (car1 > car2) {
+		cout << "Difference: $" << (car1.getHourRate() - car2.getHourRate()) * hours << endl;
+		return car2;
+	}
+	else {
+		cout << "Difference: $" << (car2.getHourRate() - car1.getHourRate()) * hours << endl;
+		return car1;
+	}
+}
 
 int main()
 {
