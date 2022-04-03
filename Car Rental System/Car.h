@@ -27,4 +27,5 @@ public:
     void displayInfo();
     //void displayRentals();
     bool operator >(Car);
+    bool operator ==(Car);
 };
