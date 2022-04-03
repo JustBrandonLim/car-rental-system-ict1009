@@ -28,4 +28,5 @@ public:
     bool getServicing();
     void displayInfo();
     void displayRentals();
+    bool operator >(Car);
 };
