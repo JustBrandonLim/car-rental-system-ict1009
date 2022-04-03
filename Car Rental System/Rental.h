@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include "CustomerAccount.h"
 #include "Car.h"
 
@@ -17,7 +16,6 @@ private:
 	DateTime startDateTime;
 	DateTime endDateTime;
 	double totalFees;
-	std::vector <CustomerAccount> customerAccounts;
 	//TODO: Insurance?
 public:
 	Rental();
