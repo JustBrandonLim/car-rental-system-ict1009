@@ -6,10 +6,10 @@ void addRental(Car car, int hours) {
     car.rentals.push_back(myRental);
 }
 
-Car::Car(std::string model, std::string plateNum, double hourRate, double insurance){
+Car::Car(std::string model, std::string plateNum, double hourluRate, double insurance){
     this->model = model;
-    this->plateNum = plateNum;
-    this->hourRate = hourRate;
+    this->plateNumber = plateNumber;
+    this->hourlyRate = hourlyRate;
     this->insurance = insurance;
 }
 
@@ -25,11 +25,11 @@ std::string Car::getModel(){
 }
 
 std::string Car::getPlateNumber(){
-  return plateNum;
+  return plateNumber;
 }
 
 double Car::getHourlyRate(){
-  return hourRate;
+  return hourlyRate;
 }
 
 bool Car::getServicing() {
@@ -40,8 +40,8 @@ vector <Rental> Car::getRentals() {
 }
 void Car::displayInfo() {
     std::cout << "Car Model: " << model << std::endl;
-    std::cout << "Car Plate Number: " << plateNum << std::endl;
-    std::cout << "Hourly Rate: " << hourRate << "/hr" << std::endl;
+    std::cout << "Car Plate Number: " << plateNumber << std::endl;
+    std::cout << "Hourly Rate: " << hourlyRate << "/hr" << std::endl;
     if (getServicing() == true)
         std::cout << "Car due for servicing." << std::endl;
     else
@@ -52,12 +52,12 @@ void Car::displayInfo() {
 void Car::displayRentals() {
     std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
     for (int i = 0; i < rentals.size(); i++) {
-        std::cout << model << "\t" << plateNum << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
+        std::cout << model << "\t" << plateNumber << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
     }
 }
 
 bool Car::operator>(Car x) {
-    return hourRate > x.hourRate ? true : false;
+    return hourlyRate > x.hourlyRate ? true : false;
 }
 /*
 double Car::getDayRate(){
