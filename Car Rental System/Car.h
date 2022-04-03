@@ -21,7 +21,7 @@ public:
     void setServicing();
     std::string getModel();
     std::string getPlateNumber();
-    vector <Rental> getRentals();
+    //vector <Rental> getRentals();
     double getHourlyRate();
     bool getServicing();
     void displayInfo();
