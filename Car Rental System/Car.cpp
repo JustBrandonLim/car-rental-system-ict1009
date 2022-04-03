@@ -1,14 +1,9 @@
 #include "Car.h"
 
-void addRental(Car car, int hours) {
-    int payable = car.hourRate * hours;
-    Rental myRental(hours, payable);
-    car.rentals.push_back(myRental);
-}
-Car::Car(string model, string plateNum, double hourRate, double insurance){
+Car::Car(std::string model, std::string plateNum, double hourluRate, double insurance){
     this->model = model;
-    this->plateNum = plateNum;
-    this->hourRate = hourRate;
+    this->plateNumber = plateNumber;
+    this->hourlyRate = hourlyRate;
     this->insurance = insurance;
 }
 
@@ -19,46 +14,48 @@ void Car::setServicing() {
         servicing = true;
 }
 
-string Car::getModel(){
+std::string Car::getModel(){
   return model;
 }
 
-string Car::getPlateNum(){
-  return plateNum;
+std::string Car::getPlateNumber(){
+  return plateNumber;
 }
 
-double Car::getHourRate(){
-  return hourRate;
+double Car::getHourlyRate(){
+  return hourlyRate;
 }
 
 bool Car::getServicing() {
     return servicing;
 }
-vector <Rental> Car::getRentals() {
-    return rentals;
-}
+
 void Car::displayInfo() {
-    cout << "Car Model: " << model << endl;
-    cout << "Car Plate Number: " << plateNum << endl;
-    cout << "Hourly Rate: " << hourRate << "/hr" << endl;
+    std::cout << "Car Model: " << model << std::endl;
+    std::cout << "Car Plate Number: " << plateNumber << std::endl;
+    std::cout << "Hourly Rate: " << hourlyRate << "/hr" << std::endl;
     if (getServicing() == true)
-        cout << "Car due for servicing." << endl;
+        std::cout << "Car due for servicing." << std::endl;
     else
-        cout << "Car serviced." << endl;
+        std::cout << "Car serviced." << std::endl;
 
-}
-
-void Car::displayRentals() {
-    cout << "Car Name | Car Plate | Rental hours | Total Payable " << endl;
-    for (int i = 0; i < rentals.size(); i++) {
-        cout << model << "\t" << plateNum << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << endl;
-    }
 }
 
 bool Car::operator>(Car x) {
-    return hourRate > x.hourRate ? true : false;
+    return hourlyRate > x.hourlyRate ? true : false;
 }
+
 /*
+vector <Rental> Car::getRentals() {
+    return rentals;
+}
+
+void Car::displayRentals() {
+    std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
+    for (int i = 0; i < rentals.size(); i++) {
+        std::cout << model << "\t" << plateNumber << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
+    }
+}
 double Car::getDayRate(){
   return dayRate;
 }

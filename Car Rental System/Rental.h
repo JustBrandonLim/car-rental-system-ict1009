@@ -1,23 +1,28 @@
 #pragma once
 
-#include <string>
+#include "CustomerAccount.h"
+#include "Car.h"
 
-using namespace std;
-
-#include "Account.h"
+#include "DateTime.h"
 
 class Account;
+class Car;
 
 class Rental
 {
 private:
-	int hours;
-	double totalPayable;
-
+	CustomerAccount customerAccount;
+	Car car;
+	DateTime startDateTime;
+	DateTime endDateTime;
+	double totalFees;
+	//TODO: Insurance?
 public:
 	Rental();
-	Rental(int, double);
-	int getHours();
-	void selectHours(int);
-	double getTotalPayable();
+	Rental(CustomerAccount, Car, DateTime, DateTime);
+	CustomerAccount getCustomerAccount();
+	Car getCar();
+	DateTime getStartDateTime();
+	DateTime getEndDateTime();
+	double getTotalFees();
 };
