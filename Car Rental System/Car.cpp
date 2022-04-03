@@ -36,9 +36,11 @@ double Car::getHourlyRate(){
 bool Car::getServicing() {
     return servicing;
 }
+/*
 vector <Rental> Car::getRentals() {
     return rentals;
 }
+*/
 void Car::displayInfo() {
     std::cout << "Car Model: " << model << std::endl;
     std::cout << "Car Plate Number: " << plateNumber << std::endl;
