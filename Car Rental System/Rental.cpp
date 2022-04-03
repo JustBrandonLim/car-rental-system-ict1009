@@ -1,19 +1,20 @@
 #include "Rental.h"
 
-Rental::Rental(int hours, double totalPayable)
+Rental::Rental() {}
+
+Rental::Rental(CustomerAccount customerAccount, Car car)
 {
-	this->hours = hours;
-	this->totalPayable = totalPayable;
+	this->customerAccount = customerAccount;
+	this->car = car;
 }
 
-int Rental::getHours() {
-	return hours;
+CustomerAccount Rental::getCustomerAccount()
+{
+	return this->customerAccount;
 }
 
-void Rental::selectHours(int hours) {
-	this->hours = hours;
+Car Rental::getCar()
+{
+	return this->car;
 }
 
-double Rental::getTotalPayable() {
-	return totalPayable;
-}

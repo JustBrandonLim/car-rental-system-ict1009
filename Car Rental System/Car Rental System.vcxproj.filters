@@ -32,6 +32,9 @@
     <Filter Include="Insurance\TheftInsurance">
       <UniqueIdentifier>{9f16d94c-2aa7-4e31-aa83-d8dc59cd28d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rental\Rental">
+      <UniqueIdentifier>{0d6dd4cd-0093-4deb-beea-27dfae955894}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Menu.cpp">
@@ -49,9 +52,6 @@
     <ClCompile Include="InjuryInsurance.cpp">
       <Filter>Insurance\InjuryInsurance</Filter>
     </ClCompile>
-    <ClCompile Include="Rental.cpp">
-      <Filter>Rental</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TheftInsurance.cpp">
       <Filter>Insurance\TheftInsurance</Filter>
@@ -61,6 +61,12 @@
     </ClCompile>
     <ClCompile Include="FullCoverageInsurance.cpp">
       <Filter>Insurance\FullCoverageInsurance</Filter>
+    </ClCompile>
+    <ClCompile Include="Rental.cpp">
+      <Filter>Rental\Rental</Filter>
+    </ClCompile>
+    <ClCompile Include="RentalManager.cpp">
+      <Filter>Rental</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,9 +79,6 @@
     <ClInclude Include="InjuryInsurance.h">
       <Filter>Insurance\InjuryInsurance</Filter>
     </ClInclude>
-    <ClInclude Include="Rental.h">
-      <Filter>Rental</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>to-organize</Filter>
     </ClInclude>
@@ -85,11 +88,20 @@
     <ClInclude Include="CollisionInsurance.h">
       <Filter>Insurance\CollisionInsurance</Filter>
     </ClInclude>
-    <ClInclude Include="Car.h">
-      <Filter>Rental</Filter>
-    </ClInclude>
     <ClInclude Include="FullCoverageInsurance.h">
       <Filter>Insurance\FullCoverageInsurance</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerAccount.h">
+      <Filter>Account\CustomerAccount</Filter>
+    </ClInclude>
+    <ClInclude Include="RentalManager.h">
+      <Filter>Rental</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>to-organize</Filter>
+    </ClInclude>
+    <ClInclude Include="Rental.h">
+      <Filter>Rental\Rental</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

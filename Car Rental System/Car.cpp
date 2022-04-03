@@ -5,6 +5,7 @@ void addRental(Car car, int hours) {
     Rental myRental(hours, payable);
     car.rentals.push_back(myRental);
 }
+
 Car::Car(string model, string plateNum, double hourRate, double insurance){
     this->model = model;
     this->plateNum = plateNum;

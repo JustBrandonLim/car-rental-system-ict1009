@@ -4,20 +4,19 @@
 
 using namespace std;
 
-#include "Account.h"
+#include "CustomerAccount.h"
+#include "Car.h"
 
 class Account;
 
 class Rental
 {
 private:
-	int hours;
-	double totalPayable;
-
+	CustomerAccount customerAccount;
+	Car car;
 public:
 	Rental();
-	Rental(int, double);
-	int getHours();
-	void selectHours(int);
-	double getTotalPayable();
+	Rental(CustomerAccount, Car);
+	CustomerAccount getCustomerAccount();
+	Car getCar();
 };
