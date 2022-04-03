@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Insurance.h"
-#include "Account.h"
+#include "CustomerAccount.h"
 
 #include <string>
 
@@ -9,8 +9,12 @@ class Account;
 
 class InjuryInsurance : virtual public Insurance
 {
+private:
+	double payableAmount;
 public:
-	InjuryInsurance(Account, double, std::string);
+	InjuryInsurance(CustomerAccount, int, std::string);
+	double getPayableAmount();
+	void setPayableAmount(int);
 	void submitInjuries();
 	void showInjuries();
 };

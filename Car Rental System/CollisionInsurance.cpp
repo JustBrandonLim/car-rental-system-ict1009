@@ -3,16 +3,24 @@
 #include <iostream>
 #include <fstream>
 
-CollisionInsurance::CollisionInsurance(Account owner, double payableAmount, std::string description) : Insurance(owner, payableAmount, description)
+CollisionInsurance::CollisionInsurance(CustomerAccount owner, int duration, std::string description) : Insurance(owner, duration, description)
 {
+	setPayableAmount(duration);
+}
 
+double CollisionInsurance::getPayableAmount() {
+	return this->payableAmount;
+}
+
+void CollisionInsurance::setPayableAmount(int duration) {
+	this->payableAmount = duration * 10.00;
 }
 
 void CollisionInsurance::submitCarDamages()
 {
 	std::string carDamages, user;
 
-	user = this->Insurance::getInsuranceOwner().getUsername();
+	user = this->Insurance::getInsuranceOwner().Account::getUsername();
 
 	std::cin >> carDamages;
 
@@ -29,7 +37,7 @@ void CollisionInsurance::showCarDamages()
 {
 	std::string carDamages, user, fileUser;
 
-	user = this->Insurance::getInsuranceOwner().getUsername();
+	user = this->Insurance::getInsuranceOwner().Account::getUsername();
 
 	std::ifstream carDamagesFile;
 

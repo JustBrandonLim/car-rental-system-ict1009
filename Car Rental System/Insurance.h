@@ -1,22 +1,27 @@
 #pragma once
 
 #include <string>
-#include "Account.h"
+#include "CustomerAccount.h"
 
 class Account;
 
 class Insurance
 {
 private:
-	Account insuranceOwner;
-	double payableAmount;
+	CustomerAccount insuranceOwner;
+	//double payableAmount;
+	int duration;
 	std::string description;
 public:
-	Insurance(Account, double, std::string);
-	double getPayableAmount();
+	Insurance();
+	Insurance(CustomerAccount, int, std::string);
+	//double getPayableAmount();
+	int getDuration();
+	void setDuration(int);
 	std::string getDescription();
-	void setPayableAmount(double payableAmount);
+	//void setPayableAmount(double payableAmount);
 	void setDescription(std::string description);
-	Account getInsuranceOwner();
+	void setInsuranceOwner(CustomerAccount insuranceOwner);
+	CustomerAccount getInsuranceOwner();
 };
 

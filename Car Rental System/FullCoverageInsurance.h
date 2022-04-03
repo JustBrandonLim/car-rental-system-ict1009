@@ -3,13 +3,17 @@
 #include "TheftInsurance.h"
 #include "CollisionInsurance.h"
 #include "InjuryInsurance.h"
-#include "Account.h"
+#include "CustomerAccount.h"
 
 class Account;
 
 class FullCoverageInsurance : public CollisionInsurance, public TheftInsurance, public InjuryInsurance
 {
+private:
+	double payableAmount;
 public:
-	FullCoverageInsurance(Account, double, std::string);
+	FullCoverageInsurance(CustomerAccount, int, std::string);
+	double getPayableAmount();
+	void setPayableAmount(int);
 };
 

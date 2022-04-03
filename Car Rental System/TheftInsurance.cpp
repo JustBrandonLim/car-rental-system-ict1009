@@ -3,16 +3,24 @@
 #include <iostream>
 #include <fstream>
 
-TheftInsurance::TheftInsurance(Account owner, double payableAmount, std::string description) : Insurance(owner, payableAmount, description)
+TheftInsurance::TheftInsurance(CustomerAccount owner, int duration, std::string description) : Insurance(owner, duration, description)
 {
+	setPayableAmount(duration);
+}
 
+double TheftInsurance::getPayableAmount() {
+	return this->payableAmount;
+}
+
+void TheftInsurance::setPayableAmount(int duration) {
+	this->payableAmount = duration * 15.00;
 }
 
 void TheftInsurance::submitStolenItems()
 {
 	std::string stolenItems, user;
 
-	user = this->Insurance::getInsuranceOwner().getUsername();
+	user = this->Insurance::getInsuranceOwner().Account::getUsername();
 
 	std::cin >> stolenItems;
 
@@ -29,7 +37,7 @@ void TheftInsurance::showStolenItems()
 {
 	std::string stolenItems, user, fileUser;
 
-	user = this->Insurance::getInsuranceOwner().getUsername();
+	user = this->Insurance::getInsuranceOwner().Account::getUsername();
 
 	std::ifstream stolenItemsFile;
 
