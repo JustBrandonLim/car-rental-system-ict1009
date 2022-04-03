@@ -17,7 +17,7 @@ private:
 	DateTime startDateTime;
 	DateTime endDateTime;
 	double totalFees;
-	//vector <accounts>;
+	std::vector <CustomerAccount> customerAccounts;
 	//TODO: Insurance?
 public:
 	Rental();
