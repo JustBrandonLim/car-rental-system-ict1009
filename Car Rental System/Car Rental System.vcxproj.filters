@@ -53,6 +53,15 @@
       <Filter>Rental</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TheftInsurance.cpp">
+      <Filter>Insurance\TheftInsurance</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionInsurance.cpp">
+      <Filter>Insurance\CollisionInsurance</Filter>
+    </ClCompile>
+    <ClCompile Include="FullCoverageInsurance.cpp">
+      <Filter>Insurance\FullCoverageInsurance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">
@@ -67,11 +76,20 @@
     <ClInclude Include="Rental.h">
       <Filter>Rental</Filter>
     </ClInclude>
-    <ClInclude Include="Car.h">
-      <Filter>to-organize</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>to-organize</Filter>
+    </ClInclude>
+    <ClInclude Include="TheftInsurance.h">
+      <Filter>Insurance\TheftInsurance</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionInsurance.h">
+      <Filter>Insurance\CollisionInsurance</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Rental</Filter>
+    </ClInclude>
+    <ClInclude Include="FullCoverageInsurance.h">
+      <Filter>Insurance\FullCoverageInsurance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
