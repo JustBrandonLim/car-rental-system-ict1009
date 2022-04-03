@@ -1,6 +1,6 @@
 #include "Car.h"
 
-Car::Car(std::string model, std::string plateNum, double hourluRate, double insurance){
+Car::Car(std::string model, std::string plateNumber, double hourlyRate, double insurance){
     this->model = model;
     this->plateNumber = plateNumber;
     this->hourlyRate = hourlyRate;
