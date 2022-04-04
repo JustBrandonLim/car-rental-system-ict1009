@@ -10,12 +10,10 @@ class Account;
 
 class AdminAccount : public Account {
 private:
-	CarManager carManager;
-	std::string adminId;
+	CarManager* carManager;
 public:
 	AdminAccount();
-	AdminAccount(std::string, std::string, std::string, std::string, std::string, std::string, const CarManager&);
-	std::string getAdminId();
+	AdminAccount(std::string, std::string, std::string, std::string, std::string, std::string, CarManager*);
 	void addCar(Car);
 	//void editCar(Car);
 	void removeCar(Car);
