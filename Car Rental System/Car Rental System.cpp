@@ -5,23 +5,53 @@
 
 #include "AdminAccount.h"
 #include "CustomerAccount.h"
+#include<fstream>
+
 
 void doRegisterAccount()
 {
     system("title Car Rental System - Register");
     system("cls");
+    std::string user = "";
+    std::string pass = "";
+    std::string name = "";
+    std::string dob = "";
+    std::string address = "";
+    std::string customer = "F";
+
     std::cout << "=== Car Rental System ===" << std::endl;
     std::cout << "Please enter your username: ";
-
+    std::cin >> user;
     std::cout << "Please enter your password: ";
-
+    std::cin >> pass;
     std::cout << "Please enter your name: ";
-
+    std::cin >> name;
     std::cout << "Please enter your date of birth (dd/mm/yyyy): ";
-
+    std::cin >> dob;
     std::cout << "Please enter your address: ";
+    std::cin >> address;
 
-    std::cout << "Account is registered!" << std::endl;
+    std::ifstream myfileinput;
+    std::ofstream myfileoutput;
+
+    myfileinput.open("Account.txt");
+    myfileoutput.open("Account.txt", std::ios::app);
+
+    if (myfileinput.is_open())
+    {
+        myfileoutput << user << " " << pass << " " << name << " " << dob << " " << address << " " << customer << " " << std::endl;
+        myfileinput.close();
+        myfileoutput.close();
+        std::cout << "Account is registered!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Unable to open file";
+    }
+
+    
+
+
 }
 
 void doLoginAccount(CarManager* carManager)
@@ -36,24 +66,44 @@ void doLoginAccount(CarManager* carManager)
     std::cout << "Please enter your password: ";
     std::string password = "";
     std::cin >> password;
+    std::string user = "";
+    std::string pass = "";
+    std::string name = "";
+    std::string dob = "";
+    std::string address = "";
+    std::string checkadmin = "";
+    std::string message = "File doesn't exist";
 
-    if (username == "admin" && password == "test")
-    {
-        AdminAccount adminAccount(carManager, username, password, "", "", "");
-        system("cls");
-        adminAccount.doAdmin();
-    }
-    else if (username == "cust" && password == "test")
-    {
-        CustomerAccount customerAccount(carManager, username, password, "", "", "");
-        system("cls");
-        customerAccount.doCustomer();
-    }
-    else
-    {
-        system("cls");
-        std::cout << "\x1B[31m*** Wrong username or password! ***\033[0m" << std::endl;
-    }
+    try {
+        std::ifstream input("Account.txt");
+
+        while (input >> user >> pass >> name >> dob >> address >> checkadmin)
+        {
+
+            if (username == user && password == pass && checkadmin == "T")
+            {
+                AdminAccount adminAccount(carManager, user, pass, name, dob, address);
+                system("cls");
+                adminAccount.doAdmin();
+            }
+            else if (username == user && password == pass && checkadmin == "F")
+            {
+                CustomerAccount customerAccount(carManager, user, pass, name, dob, address);
+                system("cls");
+                customerAccount.doCustomer();
+            }
+            else
+            {
+                system("cls");
+                std::cout << "\x1B[31m*** Wrong username or password! ***\033[0m" << std::endl;
+            }
+        }
+
+    } catch (std::exception) 
+      {
+            std::cout << "File does not exist" << std::endl;
+      }
+
 }
 
 /*

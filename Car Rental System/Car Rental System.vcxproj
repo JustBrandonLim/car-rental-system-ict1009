@@ -157,6 +157,9 @@
     <ClInclude Include="CarManager.h" />
     <ClInclude Include="CustomerAccount.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Account.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
