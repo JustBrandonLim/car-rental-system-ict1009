@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Insurance">
+      <UniqueIdentifier>{671f7fad-613b-4a50-a0f1-90adadf8c57a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Insurance">
+      <UniqueIdentifier>{c28183d0-5dbf-4d6f-9bc2-44382b4bbfcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Car Rental System.cpp">
@@ -33,6 +39,21 @@
     <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Insurance.cpp">
+      <Filter>Source Files\Insurance</Filter>
+    </ClCompile>
+    <ClCompile Include="TheftInsurance.cpp">
+      <Filter>Source Files\Insurance</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionInsurance.cpp">
+      <Filter>Source Files\Insurance</Filter>
+    </ClCompile>
+    <ClCompile Include="FullCoverageInsurance.cpp">
+      <Filter>Source Files\Insurance</Filter>
+    </ClCompile>
+    <ClCompile Include="InjuryInsurance.cpp">
+      <Filter>Source Files\Insurance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">
@@ -50,10 +71,20 @@
     <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Account.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <ClInclude Include="Insurance.h">
+      <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="TheftInsurance.h">
+      <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionInsurance.h">
+      <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="FullCoverageInsurance.h">
+      <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="InjuryInsurance.h">
+      <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
