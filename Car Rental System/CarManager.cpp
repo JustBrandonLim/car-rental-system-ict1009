@@ -19,10 +19,10 @@ void CarManager::removeCar(Car myCar) {
 }
 
 Car CarManager::getCarByModel(std::string model) {
-	for (Car car : this->cars) {
-		if (car.getModel() == model)
+	for (int i = 0; i < cars.size(); i++) {
+		if (cars[i].getModel() == model)
 		{
-			return car;
+			return cars[i];
 			break;
 			}
 	}
