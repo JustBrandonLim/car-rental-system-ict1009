@@ -1,11 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <algorithm>
-
-
 #include "Car.h"
-
 
 class CarManager
 {
