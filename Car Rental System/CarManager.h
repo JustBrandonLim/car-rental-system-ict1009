@@ -17,6 +17,7 @@ public:
 	std::vector<Car> getCars();
 	void addCar(Car);
 	void removeCar(Car);
+	void setServicing(Car);
 	Car getCarByModel(std::string);
 	void displayCars();
 };
