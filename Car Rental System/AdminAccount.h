@@ -14,7 +14,7 @@ private:
 	std::string adminId;
 public:
 	AdminAccount();
-	AdminAccount(std::string, std::string, std::string, std::string, std::string, std::string, CarManager);
+	AdminAccount(std::string, std::string, std::string, std::string, std::string, std::string, const CarManager&);
 	std::string getAdminId();
 	void addCar(Car);
 	//void editCar(Car);
