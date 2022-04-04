@@ -20,7 +20,7 @@ void AdminAccount::setServicing(Car myCar) {
 }
 
 void AdminAccount::displayCars() {
-	carManager>displayCars();
+	carManager->displayCars();
 }
 
 
