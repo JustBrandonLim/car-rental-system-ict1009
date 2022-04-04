@@ -2,9 +2,17 @@
 #include <fstream>
 #include "InjuryInsurance.h"
 
+InjuryInsurance::InjuryInsurance() : Insurance() {
+	setPayableAmount(0);
+}
+
 InjuryInsurance::InjuryInsurance(CustomerAccount owner, int duration, std::string description) : Insurance(owner, duration, description)
 {
 	setPayableAmount(duration);
+}
+
+InjuryInsurance::~InjuryInsurance() {
+	cout << "Injury Insurance deleted" << endl;
 }
 
 double InjuryInsurance::getPayableAmount() {

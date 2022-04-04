@@ -1,9 +1,16 @@
 #include "Insurance.h"
+#include <iostream>
 
 Insurance::Insurance() {
-	
+	CustomerAccount newAccount;
+	this->insuranceOwner = newAccount;
+	this->duration = 0;
+	this->description = "Empty insurance.";
 }
 
+Insurance::~Insurance() {
+	cout << "Insurance deleted." << endl;
+}
 
 Insurance::Insurance(CustomerAccount owner, int duration, std::string description) {
 	this->insuranceOwner = owner;

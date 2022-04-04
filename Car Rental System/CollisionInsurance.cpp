@@ -3,9 +3,17 @@
 #include <iostream>
 #include <fstream>
 
+CollisionInsurance::CollisionInsurance() : Insurance() {
+	setPayableAmount(0);
+}
+
 CollisionInsurance::CollisionInsurance(CustomerAccount owner, int duration, std::string description) : Insurance(owner, duration, description)
 {
 	setPayableAmount(duration);
+}
+
+CollisionInsurance::~CollisionInsurance() {
+	cout << "Collision Insurance deleted" << endl;
 }
 
 double CollisionInsurance::getPayableAmount() {

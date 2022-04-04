@@ -1,9 +1,19 @@
 #include "FullCoverageInsurance.h"
+#include <iostream>
+
+FullCoverageInsurance::FullCoverageInsurance() : CollisionInsurance(), TheftInsurance(), InjuryInsurance(), Insurance() 
+{
+	setPayableAmount(0);
+}
 
 FullCoverageInsurance::FullCoverageInsurance(CustomerAccount owner, int duration, std::string description) : CollisionInsurance(owner, duration, description),
 TheftInsurance(owner, duration, description), InjuryInsurance(owner, duration, description), Insurance(owner, duration, description)
 {
 	setPayableAmount(duration);
+}
+
+FullCoverageInsurance::~FullCoverageInsurance() {
+	cout << "Full Coverage Insurance deleted" << endl;
 }
 
 double FullCoverageInsurance::getPayableAmount() {

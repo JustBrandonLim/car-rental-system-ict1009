@@ -15,6 +15,7 @@ private:
 public:
 	Insurance();
 	Insurance(CustomerAccount, int, std::string);
+	~Insurance();
 	//double getPayableAmount();
 	int getDuration();
 	void setDuration(int);

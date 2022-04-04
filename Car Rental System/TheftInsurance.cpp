@@ -3,9 +3,18 @@
 #include <iostream>
 #include <fstream>
 
+TheftInsurance::TheftInsurance() : Insurance()
+{
+	setPayableAmount(0);
+}
+
 TheftInsurance::TheftInsurance(CustomerAccount owner, int duration, std::string description) : Insurance(owner, duration, description)
 {
 	setPayableAmount(duration);
+}
+
+TheftInsurance::~TheftInsurance() {
+	cout << "Theft Insurance deleted" << endl;
 }
 
 double TheftInsurance::getPayableAmount() {

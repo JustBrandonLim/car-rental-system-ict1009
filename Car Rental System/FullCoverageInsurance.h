@@ -12,7 +12,9 @@ class FullCoverageInsurance : public CollisionInsurance, public TheftInsurance, 
 private:
 	double payableAmount;
 public:
+	FullCoverageInsurance();
 	FullCoverageInsurance(CustomerAccount, int, std::string);
+	~FullCoverageInsurance();
 	double getPayableAmount();
 	void setPayableAmount(int);
 };
