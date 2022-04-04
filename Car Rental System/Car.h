@@ -5,7 +5,7 @@
 
 class Rental;
 
-class Car{
+class Car {
     friend void addRental(Car, int);
 private:
     std::string model;
@@ -17,7 +17,7 @@ private:
 public:
     Car();
     Car(std::string, std::string, double, double);
-    ~Car(){}; //cout << model << " deleted" << endl;}
+    ~Car() {}; //cout << model << " deleted" << endl;}
     void setServicing();
     std::string getModel();
     std::string getPlateNumber();

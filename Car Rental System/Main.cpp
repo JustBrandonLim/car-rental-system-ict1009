@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Menu.h"
 #include "Car.h"
 
 using namespace std;
@@ -24,7 +25,10 @@ int main()
 	bool exitProgram = false;
 
 	int optionSelected = -1;
+	Menu menu;
 
+	menu.printMenu();
+	/*
 	do 
 	{
 		switch (menuDisplay) {
@@ -70,7 +74,7 @@ int main()
 		}
 	} while (!exitProgram);
 
-	/*bool exit = false;
+	bool exit = false;
 	while (!exit)
 	{
 		bool validOption = false;

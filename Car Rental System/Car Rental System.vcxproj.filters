@@ -38,6 +38,9 @@
     <Filter Include="Others">
       <UniqueIdentifier>{d998f400-ad74-4f13-9fb0-27ceb8d1eede}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{38a02506-a7dd-4a2b-990e-bf87bce7f2d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Menu.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="RentalManager.cpp">
       <Filter>Rental</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>to-organize</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,5 +115,16 @@
     <ClInclude Include="DateTime.h">
       <Filter>Others</Filter>
     </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>to-organize</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AdminDatabase.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="database.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,45 +1,54 @@
 #include "RentalManager.h"
 
-RentalManager::RentalManager() 
+RentalManager::RentalManager()
 {
-	
+
 }
 
-std::vector<Rental> RentalManager::getRentals() 
+std::vector<Rental> RentalManager::getRentals()
 {
 	return this->rentals;
 }
 
 Rental RentalManager::getRentalByAccount(CustomerAccount customerAccount)
 {
+
+	/*
 	for (Rental rental : this->rentals)
 	{
-		// Check if account name == the other account name
 		/*if (rental.getCar() == car)
 		{
 			return rental;
-		}*/
+		}
+
+
 	}
+	*/
+	return this->rentals[0];
 }
 
-Rental RentalManager::getRentalByCar(Car car) 
+Rental RentalManager::getRentalByCar(Car car)
 {
-	for (Rental rental : this->rentals) 
+	/*
+	for (Rental rental : this->rentals)
 	{
-		// Check if carplate == the other car plate
 		/*if (rental.getCar() == car)
 		{
 			return rental;
-		}*/
+		}
+
+
 	}
+	*/
+	return this->rentals[0];
 }
 
-void RentalManager::addRental(Rental rental) 
+void RentalManager::addRental(Rental rental)
 {
 	this->rentals.push_back(rental);
 }
 
 void RentalManager::cancelRental(Rental rental)
 {
-	this->rentals.erase(std::remove(this->rentals.begin(), this->rentals.end(), rental), this->rentals.end());
+	//this->rentals.erase(std::remove(this->rentals.begin(), this->rentals.end(), rental), this->rentals.end());
 }

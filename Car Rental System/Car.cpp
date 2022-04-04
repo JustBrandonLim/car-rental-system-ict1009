@@ -1,6 +1,11 @@
 #include "Car.h"
 
-Car::Car(std::string model, std::string plateNumber, double hourlyRate, double insurance){
+Car::Car()
+{
+
+}
+
+Car::Car(std::string model, std::string plateNumber, double hourlyRate, double insurance) {
     this->model = model;
     this->plateNumber = plateNumber;
     this->hourlyRate = hourlyRate;
@@ -14,16 +19,16 @@ void Car::setServicing() {
         servicing = true;
 }
 
-std::string Car::getModel(){
-  return model;
+std::string Car::getModel() {
+    return this->model;
 }
 
-std::string Car::getPlateNumber(){
-  return plateNumber;
+std::string Car::getPlateNumber() {
+    return this->plateNumber;
 }
 
-double Car::getHourlyRate(){
-  return hourlyRate;
+double Car::getHourlyRate() {
+    return this->hourlyRate;
 }
 
 bool Car::getServicing() {

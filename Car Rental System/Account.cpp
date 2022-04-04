@@ -1,6 +1,11 @@
 #include "Account.h"
 
-Account::Account(string username, string password, string name, string dateOfBirth, string address) 
+Account::Account()
+{
+
+}
+
+Account::Account(string username, string password, string name, string dateOfBirth, string address)
 {
 	this->username = username;
 	this->password = password;
@@ -14,7 +19,7 @@ string Account::getUsername()
 	return this->username;
 }
 
-string Account::getName() 
+string Account::getName()
 {
 	return this->name;
 }

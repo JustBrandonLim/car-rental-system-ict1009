@@ -1,6 +1,6 @@
 #include "Rental.h"
 
-Rental::Rental() 
+Rental::Rental()
 {
 
 }
@@ -23,20 +23,20 @@ Car Rental::getCar()
 	return this->car;
 }
 
-DateTime Rental::getStartDateTime() 
+DateTime Rental::getStartDateTime()
 {
 	return this->startDateTime;
 }
 
-DateTime Rental::getEndDateTime() 
+DateTime Rental::getEndDateTime()
 {
 	return this->endDateTime;
 }
 
-double Rental::getTotalFees() 
+double Rental::getTotalFees()
 {
 	double carHourlyRate = 2.0;
 	double insuranceHourlyRate = 1.5;
-	
+
 	return (this->endDateTime.hour - this->startDateTime.hour) * carHourlyRate * insuranceHourlyRate;
 }
