@@ -15,7 +15,7 @@ public:
 	AdminAccount();
 	AdminAccount(std::string, std::string, std::string, std::string, std::string, std::string, CarManager*);
 	void addCar(Car);
-	//void editCar(Car);
+	void setServicing(Car);
 	void removeCar(Car);
 	void displayCars();
 };
