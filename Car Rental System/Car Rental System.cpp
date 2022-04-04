@@ -12,12 +12,13 @@ void doRegisterAccount()
 {
     system("title Car Rental System - Register");
     system("cls");
+
     std::string user = "";
     std::string pass = "";
     std::string name = "";
     std::string dob = "";
     std::string address = "";
-    std::string customer = "F";
+    std::string admin = "F";
 
     std::cout << "=== Car Rental System ===" << std::endl;
     std::cout << "Please enter your username: ";
@@ -39,19 +40,17 @@ void doRegisterAccount()
 
     if (myfileinput.is_open())
     {
-        myfileoutput << user << " " << pass << " " << name << " " << dob << " " << address << " " << customer << " " << std::endl;
+        myfileoutput << user << " " << pass << " " << name << " " << dob << " " << address << " " << admin << " " << std::endl;
         myfileinput.close();
         myfileoutput.close();
-        std::cout << "Account is registered!" << std::endl;
+        system("cls");
+        std::cout << "\x1B[32m*** Account is registered! ***\033[0m" << std::endl;
     }
     else
     {
-        std::cout << "Unable to open file";
+        system("cls");
+        std::cout << "\x1B[31m*** Unable to open file! ***\033[0m" << std::endl;
     }
-
-    
-
-
 }
 
 void doLoginAccount(CarManager* carManager)
@@ -72,7 +71,6 @@ void doLoginAccount(CarManager* carManager)
     std::string dob = "";
     std::string address = "";
     std::string checkadmin = "";
-    std::string message = "File doesn't exist";
 
     try {
         std::ifstream input("Account.txt");
@@ -99,45 +97,13 @@ void doLoginAccount(CarManager* carManager)
             }
         }
 
-    } catch (std::exception) 
-      {
-            std::cout << "File does not exist" << std::endl;
-      }
-
-}
-
-/*
-void doAdmin() 
-{
-    system("title Car Rental System - Admin");
-    system("cls");
-    std::cout << "=== Car Rental System ===" << std::endl;
-    std::cout << "1. Add Car" << std::endl;
-    std::cout << "2. Remove Car" << std::endl;
-    std::cout << "3. Exit" << std::endl;
-    std::cout << "Select an option: ";
-
-    int adminMenuOption = 0;
-
-    std::cin >> adminMenuOption;
-    std::cout << adminMenuOption;
-    switch (adminMenuOption)
+    }
+    catch (std::exception) 
     {
-    default:
-        exit(0);
-        break;
-    case 1:
-        std::cout << "ADD CAR" << std::endl;
-        break;
-    case 2:
-        break;
+        system("cls");
+        std::cout << "\x1B[31m*** Unable to open file! ***\033[0m" << std::endl;
     }
 }
-
-void doCustomer() 
-{
-    system("title Car Rental System - Customer");
-}*/
 
 int main()
 {
