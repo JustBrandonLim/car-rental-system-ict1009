@@ -8,11 +8,11 @@ AdminAccount::AdminAccount(std::string username, std::string password, std::stri
 }
 
 void AdminAccount::addCar(Car myCar) {
-	carManager.addCar(myCar);
+	carManager->addCar(myCar);
 }
 
 void AdminAccount::removeCar(Car myCar) {
-	carManager.removeCar(myCar);
+	carManager->removeCar(myCar);
 }
 
 void AdminAccount::setServicing(Car myCar) {
@@ -20,7 +20,7 @@ void AdminAccount::setServicing(Car myCar) {
 }
 
 void AdminAccount::displayCars() {
-	carManager.displayCars();
+	carManager>displayCars();
 }
 
 
