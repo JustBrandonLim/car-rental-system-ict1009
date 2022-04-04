@@ -1,10 +1,5 @@
 #include "CarManager.h"
 
-CarManager::CarManager()
-{
-
-}
-
 std::vector<Car> CarManager::getCars() {
 	return cars;
 }
