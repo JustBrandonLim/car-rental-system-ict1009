@@ -15,12 +15,9 @@ void AdminAccount::removeCar(Car myCar) {
 	carManager.removeCar(myCar);
 }
 
-/*
-void AdminAccount::editCar(Car myCar) {
-
+void AdminAccount::setServicing(Car myCar) {
+	carManager->setServicing(myCar);
 }
-*/
-
 
 void AdminAccount::displayCars() {
 	carManager.displayCars();
