@@ -13,6 +13,13 @@ void CarManager::removeCar(Car myCar) {
 	std::cout << myCar.getPlateNumber() << " Removed" << std::endl;
 }
 
+void CarManager::setServicing(Car myCar) {
+	for (int i = 0; i < cars.size(); i++) {
+		if (cars[i] == myCar)
+			cars[i].setServicing();
+	}	
+}
+
 Car CarManager::getCarByModel(std::string model) {
 	for (int i = 0; i < cars.size(); i++) {
 		if (cars[i].getModel() == model)
