@@ -1,17 +1,11 @@
 #include "AdminAccount.h"
 
 
-AdminAccount::AdminAccount(std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address, std::string adminId, const CarManager& carManager)
+AdminAccount::AdminAccount(std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address, CarManager* carManager)
 : Account(username, password, name, dateOfBirth, address)
 {
-	this->adminId = adminId;
 	this->carManager = carManager;
 }
-
-std::string AdminAccount::getAdminId() {
-	return adminId;
-}
-
 
 void AdminAccount::addCar(Car myCar) {
 	carManager.addCar(myCar);
