@@ -9,12 +9,10 @@ class InjuryInsurance : virtual public Insurance
 private:
 	double payableAmount;
 public:
-	InjuryInsurance();
-	InjuryInsurance(int, std::string);
-	~InjuryInsurance();
+	virtual ~InjuryInsurance() = default;
 	double getPayableAmount();
 	void setPayableAmount(int);
-	void submitInjuries(std::string);
+	void submitInjuries(std::string, std::string);
 	void showInjuries(std::string);
 };
 

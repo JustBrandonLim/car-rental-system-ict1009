@@ -9,9 +9,7 @@ class FullCoverageInsurance : public CollisionInsurance, public TheftInsurance, 
 private:
 	double payableAmount;
 public:
-	FullCoverageInsurance();
-	FullCoverageInsurance(int, std::string);
-	~FullCoverageInsurance();
+	virtual ~FullCoverageInsurance() = default;
 	double getPayableAmount();
 	void setPayableAmount(int);
 };
