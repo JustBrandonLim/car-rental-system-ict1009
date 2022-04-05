@@ -19,5 +19,6 @@ public:
 	bool getAvailable();
 	void reserveCar();
 	void unreserveCar();
+	bool operator >(Car);
 };
 

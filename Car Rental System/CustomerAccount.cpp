@@ -24,7 +24,8 @@ void CustomerAccount::doCustomer()
         std::cout << "2. Unreserve Car" << std::endl;
         std::cout << "3. Buy Insurance" << std::endl;
         std::cout << "4. Display Cars you have reserved" << std::endl;
-        std::cout << "5. Log Out" << std::endl;
+        std::cout << "5. Compare Cars" << std::endl;
+        std::cout << "6. Log Out" << std::endl;
         std::cout << "Select an option: ";
 
         int adminMenuOption = 0;
@@ -56,10 +57,10 @@ void CustomerAccount::doCustomer()
                     myfileoutput.open("Cars_reserved.txt", std::ios::app);
                     if (myfileinput.is_open())
                     {
-                        myfileoutput << currentCar->getPlateNumber()<< " "<< currentCar->getModel() << " " << this->username << std::endl;
+                        myfileoutput << currentCar->getPlateNumber() << " " << currentCar->getModel() << " " << this->username << std::endl;
                         myfileinput.close();
                         myfileoutput.close();
-                        
+
                     }
                     else
                     {
@@ -74,7 +75,7 @@ void CustomerAccount::doCustomer()
             else
                 std::cout << "Car is unavailable for reservation." << std::endl;
         }
-            break;
+        break;
         case 2:
         {
             this->carManager->displayCars();
@@ -86,8 +87,8 @@ void CustomerAccount::doCustomer()
             Car* currentCar = this->carManager->getCarByIndex(index);
             if (!currentCar->getAvailable())
             {
-                
-                remove_line = currentCar->getPlateNumber()+" "+ currentCar->getModel() + " " + this->username;
+
+                remove_line = currentCar->getPlateNumber() + " " + currentCar->getModel() + " " + this->username;
                 try
                 {
                     std::string line;
@@ -128,12 +129,12 @@ void CustomerAccount::doCustomer()
                     system("cls");
                     std::cout << "\x1B[31m*** Error! ***\033[0m" << std::endl;
                 }
-                
+
             }
             else
                 std::cout << "Car has not been reserved yet." << std::endl;
         }
-            break;
+        break;
         case 3:
             readInsuranceDetails();
             doInsurance();
@@ -150,7 +151,7 @@ void CustomerAccount::doCustomer()
                     std::cout << "User\tCar Model\tPlate Number" << std::endl;
                     while (input >> carPlate >> carModel >> user)
                     {
-                        if (user == this->username) 
+                        if (user == this->username)
                         {
                             std::cout << user << "\t" << carModel << "\t\t" << carPlate << std::endl;
                         }
@@ -167,6 +168,23 @@ void CustomerAccount::doCustomer()
             break;
         }
         case 5:
+        {
+            carManager->displayCars();
+            int compareIndex1 = -1;
+            std::cout << "Please select first car to compare: ";
+            std::cin >> compareIndex1;
+            Car* car1 = this->carManager->getCarByIndex(compareIndex1);
+            int compareIndex2 = -1;
+            std::cout << "Please select second car to compare: ";
+            std::cin >> compareIndex2;
+            Car* car2 = this->carManager->getCarByIndex(compareIndex2);
+            if (car1 > car2)
+                std::cout << car2->getModel() << " Cheaper than " << car1->getModel() << std::endl;
+            else
+                std::cout << car1->getModel() << " Cheaper than " << car2->getModel() << std::endl;
+            break;
+        }
+        case 6:
             logOut = true;
             system("cls");
             break;
