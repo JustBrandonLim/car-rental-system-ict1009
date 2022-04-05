@@ -19,24 +19,39 @@
     <Filter Include="Source Files\Insurance">
       <UniqueIdentifier>{c28183d0-5dbf-4d6f-9bc2-44382b4bbfcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Car">
+      <UniqueIdentifier>{6708dde6-44e4-403d-b2cc-68d13ee2820c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Car\Car">
+      <UniqueIdentifier>{45bfef93-c7c9-4b61-840d-377f47ce30a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Account">
+      <UniqueIdentifier>{4b1f5d22-7c16-4c46-b3d2-692dec4b014e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Car">
+      <UniqueIdentifier>{b5b19ff0-7330-4f08-9944-c31e72bc1966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Car\Car">
+      <UniqueIdentifier>{c6bc8c87-8b14-4546-a365-3b598d16149c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Account">
+      <UniqueIdentifier>{f75be7de-b396-4887-8abd-02afb3dc319a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rental">
+      <UniqueIdentifier>{c7454e2a-3416-45ee-895f-45c2f328242b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rental">
+      <UniqueIdentifier>{138bac81-94bd-4e78-8c94-56721fb9dd69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rental\Rental">
+      <UniqueIdentifier>{cf5f8f2c-be6b-4f45-9f97-27b46e7f1468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rental\Rental">
+      <UniqueIdentifier>{9093ceaa-4c07-4bb4-89a2-e019e06871af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Car Rental System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Account.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AdminAccount.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomerAccount.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CarManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Insurance.cpp">
@@ -54,23 +69,29 @@
     <ClCompile Include="InjuryInsurance.cpp">
       <Filter>Source Files\Insurance</Filter>
     </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files\Car\Car</Filter>
+    </ClCompile>
+    <ClCompile Include="CarManager.cpp">
+      <Filter>Source Files\Car</Filter>
+    </ClCompile>
+    <ClCompile Include="Account.cpp">
+      <Filter>Source Files\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminAccount.cpp">
+      <Filter>Source Files\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomerAccount.cpp">
+      <Filter>Source Files\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="Rental.cpp">
+      <Filter>Source Files\Rental\Rental</Filter>
+    </ClCompile>
+    <ClCompile Include="RentalManager.cpp">
+      <Filter>Source Files\Rental</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AdminAccount.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomerAccount.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CarManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Car.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Insurance.h">
       <Filter>Header Files\Insurance</Filter>
     </ClInclude>
@@ -85,6 +106,27 @@
     </ClInclude>
     <ClInclude Include="InjuryInsurance.h">
       <Filter>Header Files\Insurance</Filter>
+    </ClInclude>
+    <ClInclude Include="CarManager.h">
+      <Filter>Header Files\Car</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Header Files\Car\Car</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminAccount.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerAccount.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="Rental.h">
+      <Filter>Header Files\Rental\Rental</Filter>
+    </ClInclude>
+    <ClInclude Include="RentalManager.h">
+      <Filter>Header Files\Rental</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

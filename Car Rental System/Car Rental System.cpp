@@ -1,12 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
+#include<fstream>
 
 #include "CarManager.h"
+#include "RentalManager.h"
 
 #include "AdminAccount.h"
 #include "CustomerAccount.h"
-#include<fstream>
-
 
 void doRegisterAccount()
 {
@@ -61,7 +61,7 @@ void doRegisterAccount()
 
 }
 
-void doLoginAccount(CarManager* carManager)
+void doLoginAccount(CarManager* carManager, RentalManager* rentalManager)
 {
     system("title Car Rental System - Login");
 
@@ -90,7 +90,7 @@ void doLoginAccount(CarManager* carManager)
 
                 if (username == user && password == pass && checkadmin == "T")
                 {
-                    AdminAccount adminAccount(carManager, user, pass, name, dob, address);
+                    AdminAccount adminAccount(carManager, rentalManager, user, pass, name, dob, address);
                     system("cls");
                     adminAccount.doAdmin();
                 }
@@ -124,7 +124,7 @@ void doLoginAccount(CarManager* carManager)
 int main()
 {
     CarManager* carManager = CarManager::getInstance();
-    //RentalManager rentalManager;
+    RentalManager* rentalManager = RentalManager::getInstance();
 
     while (true)
     {
@@ -149,7 +149,7 @@ int main()
             doRegisterAccount();
             break;
         case 2:
-            doLoginAccount(carManager);
+            doLoginAccount(carManager, rentalManager);
             break;
         }
     }

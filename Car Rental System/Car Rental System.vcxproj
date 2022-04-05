@@ -153,6 +153,8 @@
     <ClCompile Include="FullCoverageInsurance.cpp" />
     <ClCompile Include="InjuryInsurance.cpp" />
     <ClCompile Include="Insurance.cpp" />
+    <ClCompile Include="Rental.cpp" />
+    <ClCompile Include="RentalManager.cpp" />
     <ClCompile Include="TheftInsurance.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +167,8 @@
     <ClInclude Include="FullCoverageInsurance.h" />
     <ClInclude Include="InjuryInsurance.h" />
     <ClInclude Include="Insurance.h" />
+    <ClInclude Include="Rental.h" />
+    <ClInclude Include="RentalManager.h" />
     <ClInclude Include="TheftInsurance.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,7 +4,10 @@
 
 #include "Account.h"
 #include "CarManager.h"
+#include "RentalManager.h"
 #include "Car.h"
+#include "Rental.h"
+
 #include "Insurance.h"
 #include "CollisionInsurance.h"
 #include "InjuryInsurance.h"
@@ -15,13 +18,10 @@ class CustomerAccount : public Account
 {
 private:
 	CarManager* carManager;
-	std::vector<std::unique_ptr<Insurance>> insurances;
+	RentalManager* rentalManager;
 public:
 	CustomerAccount();
-	CustomerAccount(CarManager*, std::string, std::string, std::string, std::string, std::string);
+	CustomerAccount(CarManager*, RentalManager*, std::string, std::string, std::string, std::string, std::string);
 	void doCustomer();
 	void rentCar();
-	void doInsurance();
-	void buyInsurance(Insurance);
-	void displayInsurance();
 };

@@ -1,6 +1,3 @@
-#ifndef CARMANAGER_H_
-#define CARMANAGER_H_
-
 #pragma once
 
 #include <iostream>
@@ -22,5 +19,3 @@ public:
 	void removeCar(Car);
 	void displayCars();
 };
-
-#endif

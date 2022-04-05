@@ -2,9 +2,10 @@
 
 AdminAccount::AdminAccount() {}
 
-AdminAccount::AdminAccount(CarManager* carManager, std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address)
+AdminAccount::AdminAccount(CarManager* carManager, RentalManager* rentalManager, std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address)
 {
     this->carManager = carManager;
+    this->rentalManager = rentalManager;
 	this->username = username;
 	this->password = password;
 	this->name = name;
