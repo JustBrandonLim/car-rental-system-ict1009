@@ -78,6 +78,7 @@ void doLoginAccount(CarManager* carManager)
     std::string dob = "";
     std::string address = "";
     std::string checkadmin = "";
+    int found = 0;
 
     try {
         std::ifstream input("Account.txt");
@@ -92,18 +93,21 @@ void doLoginAccount(CarManager* carManager)
                     AdminAccount adminAccount(carManager, user, pass, name, dob, address);
                     system("cls");
                     adminAccount.doAdmin();
+                    found = 1;
                 }
                 else if (username == user && password == pass && checkadmin == "F")
                 {
                     CustomerAccount customerAccount(carManager, user, pass, name, dob, address);
                     system("cls");
                     customerAccount.doCustomer();
+                    found = 1;
                 }
-                else
-                {
-                    system("cls");
-                    std::cout << "\x1B[31m*** Wrong username or password! ***\033[0m" << std::endl;
-                }
+
+            }
+            if (found == 0)
+            {
+                system("cls");
+                std::cout << "\x1B[31m*** Wrong username or password! ***\033[0m" << std::endl;
             }
         }
         else
