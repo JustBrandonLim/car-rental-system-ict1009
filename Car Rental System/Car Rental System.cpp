@@ -104,6 +104,7 @@ void doLoginAccount(CarManager* carManager)
                 }
 
             }
+            input.close();
             if (found == 0)
             {
                 system("cls");
@@ -127,8 +128,8 @@ void doLoginAccount(CarManager* carManager)
 int main()
 {
     CarManager* carManager = CarManager::getInstance();
-    carManager->addCar(Car("Honda Civic", "SKB1234M", "Manual", 2.5, true));
-    carManager->addCar(Car("Honda Jazz", "SKB4567A", "Auto", 2.5, true));
+    carManager->addCar(Car("Honda_Civic", "SKB1234M", "Manual", 2.5, true));
+    carManager->addCar(Car("Honda_Jazz", "SKB4567A", "Auto", 2.5, true));
 
     while (true)
     {
