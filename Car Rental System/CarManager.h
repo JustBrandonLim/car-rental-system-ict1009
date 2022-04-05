@@ -15,7 +15,8 @@ private:
 	CarManager& operator=(const CarManager&);
 public:
 	static CarManager* getInstance();
+	Car* getCarByIndex(int);
 	void addCar(Car);
-	void removeCar(Car);
+	void removeCar(int);
 	void displayCars();
 };

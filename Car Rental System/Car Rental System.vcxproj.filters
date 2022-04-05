@@ -37,18 +37,6 @@
     <Filter Include="Source Files\Account">
       <UniqueIdentifier>{f75be7de-b396-4887-8abd-02afb3dc319a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Rental">
-      <UniqueIdentifier>{c7454e2a-3416-45ee-895f-45c2f328242b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Rental">
-      <UniqueIdentifier>{138bac81-94bd-4e78-8c94-56721fb9dd69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Rental\Rental">
-      <UniqueIdentifier>{cf5f8f2c-be6b-4f45-9f97-27b46e7f1468}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Rental\Rental">
-      <UniqueIdentifier>{9093ceaa-4c07-4bb4-89a2-e019e06871af}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Car Rental System.cpp">
@@ -84,12 +72,6 @@
     <ClCompile Include="CustomerAccount.cpp">
       <Filter>Source Files\Account</Filter>
     </ClCompile>
-    <ClCompile Include="Rental.cpp">
-      <Filter>Source Files\Rental\Rental</Filter>
-    </ClCompile>
-    <ClCompile Include="RentalManager.cpp">
-      <Filter>Source Files\Rental</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Insurance.h">
@@ -121,12 +103,6 @@
     </ClInclude>
     <ClInclude Include="CustomerAccount.h">
       <Filter>Header Files\Account</Filter>
-    </ClInclude>
-    <ClInclude Include="Rental.h">
-      <Filter>Header Files\Rental\Rental</Filter>
-    </ClInclude>
-    <ClInclude Include="RentalManager.h">
-      <Filter>Header Files\Rental</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

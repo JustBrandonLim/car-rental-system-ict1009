@@ -14,18 +14,27 @@ CarManager* CarManager::getInstance()
 	return CarManager::instance;
 }
 
+Car* CarManager::getCarByIndex(int index)
+{
+	return &this->cars[index];
+}
+
 void CarManager::addCar(Car car) 
 {
 	this->cars.push_back(car);
 }
 
-void CarManager::removeCar(Car car) 
+void CarManager::removeCar(int index) 
 {
-	//cars.erase(std::remove(cars.begin(), cars.end(), car), cars.end());
+	this->cars.erase(this->cars.begin() + index);
 }
 
 void CarManager::displayCars() {
-	for (Car car : this->cars) {
-		std::cout << car.getPlateNumber() << std::endl;;
+
+	std::cout << "ID\tModel\t\tPlate Number\tTransmission\tDaily Rate\tAvailable" << std::endl;
+	for (int index = 0; index < this->cars.size(); index++)
+	{
+		Car currentCar = this->cars[index];
+		std::cout << index << "\t" << currentCar.getModel() << "\t" << currentCar.getPlateNumber() << "\t" << currentCar.getTransmissionType()  << "\t\t" << currentCar.getDailyRate() << "\t\t" << (currentCar.getAvailable() == true ? "Yes" : "No") << std::endl;
 	}
 }

@@ -2,10 +2,9 @@
 
 AdminAccount::AdminAccount() {}
 
-AdminAccount::AdminAccount(CarManager* carManager, RentalManager* rentalManager, std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address)
+AdminAccount::AdminAccount(CarManager* carManager, std::string username, std::string password, std::string name, std::string dateOfBirth, std::string address)
 {
     this->carManager = carManager;
-    this->rentalManager = rentalManager;
 	this->username = username;
 	this->password = password;
 	this->name = name;
@@ -28,17 +27,37 @@ void AdminAccount::doAdmin()
         int adminMenuOption = 0;
 
         std::cin >> adminMenuOption;
-        std::cout << adminMenuOption;
+
         switch (adminMenuOption)
         {
         default:
             exit(0);
             break;
         case 1:
-            this->carManager->addCar(Car("merc", "SKT369", 2.5, true));
-            std::cout << "car added" << std::endl;
+        {
+            std::string model, plateNumber, transmissionType;
+            double hourlyRate;
+            std::cout << "Please enter the model: ";
+            std::cin >> model;
+            std::cout << "Please enter the plate number: ";
+            std::cin >> plateNumber;
+            std::cout << "Please enter the transmission type (Auto/Manual): ";
+            std::cin >> transmissionType;
+            std::cout << "Please enter the hourly rate: ";
+            std::cin >> hourlyRate;
+            this->carManager->addCar(Car(model, plateNumber, transmissionType, hourlyRate, false));
+            std::cout << "Car has been added." << std::endl;
+        }
             break;
         case 2:
+        {
+            this->carManager->displayCars();
+            int index = -1;
+            std::cout << "Please select a car to remove: " << std::endl;
+            std::cin >> index;
+            this->carManager->removeCar(index);
+            std::cout << "Car has been removed." << std::endl;
+        }
             break;
         case 3:
             logOut = true;

@@ -1,4 +1,5 @@
 marcus watermelon marcus 24/12/1998 singapore F
 brandon 12345 brandon 20/4/1998 singapore F
 elson potato elson 22/12/1998 singapore F
-admin test Brandon 03/12/1999 sg F 
+admin test Brandon 03/12/1999 singapore T
+cust test Brandon 03/12/1999 singapore F

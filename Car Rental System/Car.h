@@ -7,11 +7,17 @@ class Car
 private:
 	std::string model;
 	std::string plateNumber;
-	double hourlyRate;
-	bool servicing;
+	std::string transmissionType;
+	double dailyRate;
+	bool available;
 public:
-	Car();
-	Car(std::string, std::string, double, bool);
+	Car(std::string, std::string, std::string, double, bool);
+	std::string getModel();
 	std::string getPlateNumber();
+	std::string getTransmissionType();
+	double getDailyRate();
+	bool getAvailable();
+	void reserveCar();
+	void unreserveCar();
 };
 
