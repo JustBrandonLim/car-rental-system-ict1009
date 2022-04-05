@@ -403,7 +403,7 @@ void CustomerAccount::submitClaims() {
                 newCollisionInsurance.submitCarDamages(user, input);
             }
             else {
-                cout << "You have not bought collision insurance." << endl;
+                std::cout << "You have not bought collision insurance." << std::endl;
             }
             break;
         }
@@ -417,7 +417,7 @@ void CustomerAccount::submitClaims() {
                 newInjuryInsurance.submitInjuries(user, input);
             }
             else {
-               cout << "You have not bought injury insurance." << endl;
+                std::cout << "You have not bought injury insurance." << std::endl;
             }
             break;
         }
@@ -431,7 +431,7 @@ void CustomerAccount::submitClaims() {
                 newTheftInsurance.submitStolenItems(user, input);
             }
             else {
-                cout << "You have not bought theft insurance." << endl;
+                std::cout << "You have not bought theft insurance." << std::endl;
             }
             break;
         }
