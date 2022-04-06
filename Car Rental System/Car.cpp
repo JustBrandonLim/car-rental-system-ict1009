@@ -44,6 +44,10 @@ void Car::unreserveCar()
 	this->available = true;
 }
 
-bool Car::operator>(Car myCar) {
-	return dailyRate > myCar.dailyRate ? true : false;
+bool Car::operator>(Car car1) {
+	return (this->dailyRate > car1.getDailyRate());
+}
+
+bool Car::operator<(Car car1) {
+	return (this->dailyRate < car1.getDailyRate());
 }
