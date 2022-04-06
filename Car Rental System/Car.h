@@ -20,5 +20,6 @@ public:
 	void reserveCar();
 	void unreserveCar();
 	bool operator >(Car);
+	bool operator <(Car);
 };
 
