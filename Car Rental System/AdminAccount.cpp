@@ -36,16 +36,16 @@ void AdminAccount::doAdmin()
         case 1:
         {
             std::string model, plateNumber, transmissionType;
-            double hourlyRate;
+            double dailyRate;
             std::cout << "Please enter the model: ";
             std::cin >> model;
             std::cout << "Please enter the plate number: ";
             std::cin >> plateNumber;
             std::cout << "Please enter the transmission type (Auto/Manual): ";
             std::cin >> transmissionType;
-            std::cout << "Please enter the hourly rate: ";
-            std::cin >> hourlyRate;
-            this->carManager->addCar(Car(model, plateNumber, transmissionType, hourlyRate, false));
+            std::cout << "Please enter the daily rate: ";
+            std::cin >> dailyRate;
+            this->carManager->addCar(Car(model, plateNumber, transmissionType, dailyRate, false));
             std::cout << "Car has been added." << std::endl;
         }
             break;
