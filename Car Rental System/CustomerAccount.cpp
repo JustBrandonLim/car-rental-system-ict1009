@@ -152,6 +152,8 @@ void CustomerAccount::doCompare()
         Car* car2 = this->carManager->getCarByIndex(compareIndex2);
         if (car1 > car2)
             std::cout << car2->getModel() << " Cheaper than " << car1->getModel() << std::endl;
+        else if (car1->getDailyRate() == car2->getDailyRate())
+            std::cout << car2->getModel() << " is equal to " << car1->getModel() << std::endl;
         else
             std::cout << car1->getModel() << " Cheaper than " << car2->getModel() << std::endl;
 
@@ -236,8 +238,9 @@ void CustomerAccount::doCustomer()
         case 1: //Reserve Car
         {
             doReserve();
+            break;
         }
-        break;
+        
         case 2:
         {
             doUnreserved();
