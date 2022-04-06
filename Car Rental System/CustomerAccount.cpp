@@ -25,7 +25,8 @@ void CustomerAccount::doCustomer()
         std::cout << "3. Buy Insurance" << std::endl;
         std::cout << "4. Display Cars you have reserved" << std::endl;
         std::cout << "5. Compare Cars" << std::endl;
-        std::cout << "6. Log Out" << std::endl;
+        std::cout << "6. Payment" << std::endl;
+        std::cout << "7. Log Out" << std::endl;
         std::cout << "Select an option: ";
 
         int adminMenuOption = 0;
@@ -169,22 +170,65 @@ void CustomerAccount::doCustomer()
         }
         case 5:
         {
-            carManager->displayCars();
-            int compareIndex1 = -1;
-            std::cout << "Please select first car to compare: ";
-            std::cin >> compareIndex1;
-            Car* car1 = this->carManager->getCarByIndex(compareIndex1);
-            int compareIndex2 = -1;
-            std::cout << "Please select second car to compare: ";
-            std::cin >> compareIndex2;
-            Car* car2 = this->carManager->getCarByIndex(compareIndex2);
-            if (car1 > car2)
-                std::cout << car2->getModel() << " Cheaper than " << car1->getModel() << std::endl;
-            else
-                std::cout << car1->getModel() << " Cheaper than " << car2->getModel() << std::endl;
+            try {
+                carManager->displayCars();
+                int compareIndex1 = -1;
+                std::cout << "Please select first car to compare: ";
+                std::cin >> compareIndex1;
+                Car* car1 = this->carManager->getCarByIndex(compareIndex1);
+                int compareIndex2 = -1;
+                std::cout << "Please select second car to compare: ";
+                std::cin >> compareIndex2;
+                Car* car2 = this->carManager->getCarByIndex(compareIndex2);
+                if (car1 > car2)
+                   std::cout << car2->getModel() << " Cheaper than " << car1->getModel() << std::endl;
+                else
+                    std::cout << car1->getModel() << " Cheaper than " << car2->getModel() << std::endl;
+
+            }
+            catch (std::exception) {
+                system("cls");
+                cout << "\x1B[31m*** Error! ***\033[0m" << std::endl;
+            }
             break;
         }
         case 6:
+          {
+            try {
+                std::ifstream input("Cars_reserved.txt");
+                std::string carModel;
+                std::string carPlate;
+                std::string user;
+                if (input.is_open())
+                {
+                    std::cout << "Index\tUser\tCar Model\tPlate Number" << std::endl;
+                    int index = 0;
+                    while (input >> carPlate >> carModel >> user)
+                    {
+                        if (user == this->username)
+                        {
+                            std::cout << index << "\t" << user << "\t" << carModel << "\t\t" << carPlate << std::endl;
+                            index++;
+                        }
+
+                    }
+                    input.close();
+                }
+                int payIndex = -1, daysRented;
+                std::cout << "Select Index of Car to pay: ";
+                std::cin >> payIndex;
+                std::cout << "Enter days rented: ";
+                std::cin >> daysRented;
+                Car* payCar = this->carManager->getCarByIndex(payIndex);
+                std::cout << "Payable for car: $" << payCar->getDailyRate() * daysRented << std::endl;
+            }
+            catch (std::exception) {
+                system("cls");
+                std::cout << "\x1B[31m*** Error! ***\033[0m" << std::endl;
+            }
+            break;
+        }
+        case 7:
             logOut = true;
             system("cls");
             break;
