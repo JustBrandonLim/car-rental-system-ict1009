@@ -16,7 +16,10 @@ private:
 public:
 	RentalManager();
 	void loadRentals();
+	Rental* getRentalByIndex(int id);
+	Rental* getRentalByCarPlate(string carPlate);
 	void addHourlyRental(Account* account, Car* car, double hourlyRate, int hours);
 	void addDailyRental(Account* account, Car* car, double dailyRate, int days);
+	void cancelRentalByIndex(int id);
 	void displayRentalsByAccountUsername(string username);
 };

@@ -4,6 +4,7 @@ HourlyRental::HourlyRental(Account* account, Car* car, double hourlyRate, int ho
 {
 	this->hourlyRate = hourlyRate;
 	this->hours = hours;
+	this->rentalType = rentalType;
 }
 
 double HourlyRental::calculateTotalFees()
@@ -15,11 +16,11 @@ void HourlyRental::displayRental()
 {
 	cout << "Account: " << this->account->getUsername() << endl;
 	cout << "Car: " << this->car->getCarPlate() << endl;
-	cout << "Hourly Rate: " << this->hourlyRate << endl;
+	cout << "Hourly Rate: $" << this->hourlyRate << endl;
 	cout << "Hours: " << this->hours << endl;
 }
 
 ostream& operator<<(ostream& out, HourlyRental& hourlyRental) {
-	out << "\t" << "Hourly\t\t" << hourlyRental.getCar()->getCarPlate() << "\t" << hourlyRental.getCar()->getTransmission() << "\t\t" << hourlyRental.getCar()->getModel() << "\t" << hourlyRental.calculateTotalFees() << endl;
+	out << "\t" << "Hourly\t\t" << hourlyRental.getCar()->getCarPlate() << "\t" << hourlyRental.getCar()->getTransmission() << "\t\t" << hourlyRental.getCar()->getModel() << "\t$" << hourlyRental.calculateTotalFees() << endl;
 	return out;
 }

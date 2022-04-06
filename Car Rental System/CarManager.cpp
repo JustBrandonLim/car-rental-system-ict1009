@@ -89,5 +89,4 @@ void CarManager::displayCars()
 	cout << "ID\tCar Plate\tModel\t\tTransmission\tRental Rate\tAvailable" << endl;
 	for (int index = 0; index < this->cars.size(); index++)
 		cout << index << *this->cars[index];
-		//cout << index << "\t" << this->cars[index].getCarPlate() << "\t\t" << this->cars[index].getModel() << "\t" << this->cars[index].getTransmission() << "\t\t" << this->cars[index].getRentalRate() << "\t\t" << (this->cars[index].getAvailable() ? "Yes" : "No") << endl;
 }

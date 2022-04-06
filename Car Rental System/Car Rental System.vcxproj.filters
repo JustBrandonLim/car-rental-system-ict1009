@@ -76,7 +76,6 @@
     <ClCompile Include="RentalManager.cpp">
       <Filter>Source Files\Rental</Filter>
     </ClCompile>
-    <ClCompile Include="DateTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">
@@ -106,7 +105,6 @@
     <ClInclude Include="RentalManager.h">
       <Filter>Header Files\Rental</Filter>
     </ClInclude>
-    <ClInclude Include="DateTime.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="accounts.txt">

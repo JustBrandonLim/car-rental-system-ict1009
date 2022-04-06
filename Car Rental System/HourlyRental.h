@@ -9,7 +9,7 @@ using namespace std;
 #include "Account.h"
 #include "Car.h"
 
-class HourlyRental : virtual public Rental
+class HourlyRental : public Rental
 {
 private:
 	double hourlyRate;

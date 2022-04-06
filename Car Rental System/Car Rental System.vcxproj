@@ -144,7 +144,6 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarManager.cpp" />
     <ClCompile Include="DailyRental.cpp" />
-    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="HourlyRental.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuManager.cpp" />
@@ -157,7 +156,6 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarManager.h" />
     <ClInclude Include="DailyRental.h" />
-    <ClInclude Include="DateTime.h" />
     <ClInclude Include="HourlyRental.h" />
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="Rental.h" />

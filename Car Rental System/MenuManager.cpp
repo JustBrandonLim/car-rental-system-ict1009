@@ -200,24 +200,42 @@ void MenuManager::customerMenu()
 						int days = -1;
 						cin >> days;
 
-						this->rentalManager->addHourlyRental(this->account, car, car->getRentalRate() * 24, days);
+						this->rentalManager->addDailyRental(this->account, car, car->getRentalRate() * 24, days);
 					}
 				}
 				else
 					cout << "* This car has been reserved already!" << endl;
-				//this->rentalManager->add(car->getCarPlate());
 			}
 			else
 				cout << "* Car does not exist!" << endl;
 		}
 		else
-			cout << "* There are no cars left to reserve." << endl;
+			cout << "* There are no cars left to reserve!" << endl;
 	}
 		break;
 	case 2: //CANCEL A RESERVATION
 	{
+		this->rentalManager->displayRentalsByAccountUsername(this->account->getUsername());
 
+		cout << "Please enter the ID to cancel: ";
+		int id = -1;
+		cin >> id;
+
+		if (this->rentalManager->getRentalByIndex(id) != NULL)
+		{
+			Rental* rental = this->rentalManager->getRentalByIndex(id);
+			if (rental->getAccount()->getUsername() == this->account->getUsername())
+			{
+				this->rentalManager->cancelRentalByIndex(id);
+			}
+			else
+				cout << "* Reservation does not belong to you!" << endl;
+
+		}
+		else
+			cout << "* Reservation does not exist!" << endl;
 	}
+		break;
 	case 3:
 		this->rentalManager->displayRentalsByAccountUsername(this->account->getUsername());
 		break;
