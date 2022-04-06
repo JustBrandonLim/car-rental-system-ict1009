@@ -39,6 +39,11 @@ bool Car::getAvailable()
 	return this->available;
 }
 
+void Car::setAvailable(bool available)
+{
+	this->available = available;
+}
+
 void Car::displayCar()
 {
 	cout << "Car Plate: " << this->carPlate << endl;

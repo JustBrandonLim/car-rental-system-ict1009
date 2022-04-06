@@ -1,10 +1,11 @@
 #include "MenuManager.h"
 
-MenuManager::MenuManager(AccountManager* accountManager, CarManager* carManager, MenuState menuState)
+MenuManager::MenuManager(AccountManager* accountManager, CarManager* carManager, RentalManager* rentalManager, MenuState menuState)
 {
 	this->menuState = menuState;
 	this->accountManager = accountManager;
 	this->carManager = carManager;
+	this->rentalManager = rentalManager;
 	this->account = NULL;
 }
 
@@ -149,7 +150,7 @@ void MenuManager::customerMenu()
 	cout << "===== Car Rental System =====" << endl;
 	cout << "1. Reserve a car" << endl;
 	cout << "2. Cancel a reservation" << endl;
-	cout << "3. Purchase an insurance" << endl;
+	cout << "3. Check your reservations" << endl;
 	cout << "4. Log out" << endl;
 	cout << "5. Exit" << endl;
 
@@ -162,21 +163,63 @@ void MenuManager::customerMenu()
 	default:
 		exit(0);
 		break;
-	case 1:
+	case 1: //RESERVE A CAR
 	{
 		if (this->carManager->getCars().size() != 0)
 		{
 			this->carManager->displayCars();
 
+			cout << "Please enter the ID to reserve: ";
+			int id = -1;
+			cin >> id;
+
+			if (this->carManager->getCarByIndex(id) != NULL)
+			{
+				Car* car = this->carManager->getCarByIndex(id);
+
+				if (car->getAvailable())
+				{
+					cout << "1. Hourly Reservation" << endl;
+					cout << "2. Daily Reservation" << endl;
+
+					cout << "Please select an option: ";
+					int reservationTypeSelection = -1;
+					cin >> reservationTypeSelection;
+
+					if (reservationTypeSelection == 1)
+					{
+						cout << "Please enter your hours: ";
+						int hours = -1;
+						cin >> hours;
+
+						this->rentalManager->addHourlyRental(this->account, car, car->getRentalRate(), hours);
+					}
+					else
+					{
+						cout << "Please enter your days: ";
+						int days = -1;
+						cin >> days;
+
+						this->rentalManager->addHourlyRental(this->account, car, car->getRentalRate() * 24, days);
+					}
+				}
+				else
+					cout << "* This car has been reserved already!" << endl;
+				//this->rentalManager->add(car->getCarPlate());
+			}
+			else
+				cout << "* Car does not exist!" << endl;
 		}
 		else
 			cout << "* There are no cars left to reserve." << endl;
 	}
 		break;
-	case 2:
+	case 2: //CANCEL A RESERVATION
 	{
 
 	}
+	case 3:
+		this->rentalManager->displayRentalsByAccountUsername(this->account->getUsername());
 		break;
 	case 4:
 		cout << "* You have logged out successfully." << endl;

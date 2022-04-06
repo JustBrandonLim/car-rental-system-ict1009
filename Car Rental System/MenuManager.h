@@ -8,6 +8,7 @@ using namespace std;
 
 #include "AccountManager.h"
 #include "CarManager.h"
+#include "RentalManager.h"
 
 enum class MenuState 
 {
@@ -24,9 +25,10 @@ private:
 	MenuState menuState;
 	AccountManager* accountManager;
 	CarManager* carManager;
+	RentalManager* rentalManager;
 	Account* account;
 public:
-	MenuManager(AccountManager* accountManager, CarManager* carManager, MenuState menuState = MenuState::MainMenu);
+	MenuManager(AccountManager* accountManager, CarManager* carManager, RentalManager* rentalManager, MenuState menuState = MenuState::MainMenu);
 	MenuState getMenuState();
 	void setMenuState(MenuState menuState);
 	void handleMenus();

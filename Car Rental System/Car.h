@@ -21,6 +21,7 @@ public:
 	string getTransmission();
 	double getRentalRate();
 	bool getAvailable();
+	void setAvailable(bool available);
 	void displayCar();
 	friend ostream& operator<<(ostream& cout, Car& car);
 };
