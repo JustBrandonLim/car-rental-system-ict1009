@@ -293,50 +293,74 @@ void CustomerAccount::doInsurance() {
         {
         case 1:
         {
-            std::cout << endl << "Enter duration in hours: ";
-            std::cin >> duration;
-            CollisionInsurance newCollisionInsurance;
-            newCollisionInsurance.setDescription("Collision insurance");
-            newCollisionInsurance.setDuration(duration);
-            newCollisionInsurance.setPayableAmount(duration);
-            this->newInsurances.push_back(std::make_unique<CollisionInsurance>(newCollisionInsurance));
-            std::cout << "Collision insurance purchased." << std::endl;
+            if (this->insuranceCheck[0] == true) {
+				std::cout << std::endl << "You already own collision insurance." << std::endl;
+            }
+            else {
+                std::cout << std::endl << "Enter duration in hours: ";
+                std::cin >> duration;
+                CollisionInsurance newCollisionInsurance;
+                newCollisionInsurance.setDescription("Collision insurance");
+                newCollisionInsurance.setDuration(duration);
+                newCollisionInsurance.setPayableAmount(duration);
+                this->newInsurances.push_back(std::make_unique<CollisionInsurance>(newCollisionInsurance));
+                std::cout << "Collision insurance purchased." << std::endl;
+                this->insuranceCheck[0] = true;
+            }
             break;
         }
         case 2:
         {
-            std::cout << endl << "Enter duration in hours: ";
-            std::cin >> duration;
-            InjuryInsurance newInjuryInsurance;
-            newInjuryInsurance.setDescription("Injury insurance");
-            newInjuryInsurance.setDuration(duration);
-            newInjuryInsurance.setPayableAmount(duration);
-            this->newInsurances.push_back(std::make_unique<InjuryInsurance>(newInjuryInsurance));
-            std::cout << "Injury insurance purchased." << std::endl;
+            if (this->insuranceCheck[1] == true) {
+                std::cout << std::endl << "You already own injury insurance." << std::endl;
+            }
+            else {
+                std::cout << std::endl << "Enter duration in hours: ";
+                std::cin >> duration;
+                InjuryInsurance newInjuryInsurance;
+                newInjuryInsurance.setDescription("Injury insurance");
+                newInjuryInsurance.setDuration(duration);
+                newInjuryInsurance.setPayableAmount(duration);
+                this->newInsurances.push_back(std::make_unique<InjuryInsurance>(newInjuryInsurance));
+                std::cout << "Injury insurance purchased." << std::endl;
+                this->insuranceCheck[1] = true;
+            }
             break;
         }
 		case 3:
         {
-            std::cout << endl << "Enter duration in hours: ";
-            std::cin >> duration;
-            TheftInsurance newTheftInsurance;
-            newTheftInsurance.setDescription("Theft insurance");
-            newTheftInsurance.setDuration(duration);
-            newTheftInsurance.setPayableAmount(duration);
-            this->newInsurances.push_back(std::make_unique<TheftInsurance>(newTheftInsurance));
-            std::cout << "Theft insurance purchased." << std::endl;
+            if (this->insuranceCheck[2] == true) {
+                std::cout << std::endl << "You already own theft insurance." << std::endl;
+            }
+            else {
+                std::cout << endl << "Enter duration in hours: ";
+                std::cin >> duration;
+                TheftInsurance newTheftInsurance;
+                newTheftInsurance.setDescription("Theft insurance");
+                newTheftInsurance.setDuration(duration);
+                newTheftInsurance.setPayableAmount(duration);
+                this->newInsurances.push_back(std::make_unique<TheftInsurance>(newTheftInsurance));
+                std::cout << "Theft insurance purchased." << std::endl;
+                this->insuranceCheck[2] = true;
+            }
             break;
         }
         case 4:
         {
-            std::cout << endl << "Enter duration in hours: ";
-            std::cin >> duration;
-            FullCoverageInsurance newFullCoverageInsurance;
-            newFullCoverageInsurance.setDescription("Full Coverage insurance");
-            newFullCoverageInsurance.setDuration(duration);
-            newFullCoverageInsurance.setPayableAmount(duration);
-            this->newInsurances.push_back(std::make_unique<FullCoverageInsurance>(newFullCoverageInsurance));
-            std::cout << "Full coverage insurance purchased." << std::endl;
+            if (this->insuranceCheck[3] == true) {
+                std::cout << std::endl << "You already own full coverage insurance." << std::endl;
+            }
+            else {
+                std::cout << endl << "Enter duration in hours: ";
+                std::cin >> duration;
+                FullCoverageInsurance newFullCoverageInsurance;
+                newFullCoverageInsurance.setDescription("Full Coverage insurance");
+                newFullCoverageInsurance.setDuration(duration);
+                newFullCoverageInsurance.setPayableAmount(duration);
+                this->newInsurances.push_back(std::make_unique<FullCoverageInsurance>(newFullCoverageInsurance));
+                std::cout << "Full coverage insurance purchased." << std::endl;
+                this->insuranceCheck[3] = true;
+            }
             break;
         }
         case 5:
@@ -469,6 +493,47 @@ void CustomerAccount::readInsuranceDetails() {
     insuranceFile.close();
 }
 
+void CustomerAccount::deleteInsuranceDetails(std::string insuranceCode) {
+    std::ifstream insuranceFile;
+    std::ofstream newInsuranceFile("newInsuranceFile.txt");
+	std::string userName = this->getUsername();
+    std::string user;
+    std::string insuranceType;
+    int duration;
+    int payableAmount;
+    int paymentStatus;
+    bool deleted = false;
+
+    insuranceFile.open("insuranceDetails.txt", ios::app);
+
+    if (insuranceFile.is_open()) {
+        while (insuranceFile >> user >> insuranceType >> duration >> payableAmount >> paymentStatus) {
+            if (user == userName && insuranceType == insuranceCode && deleted == false) {
+                if (insuranceCode == "CI")
+                    this->insuranceCheck[0] = false;
+                else if (insuranceCode == "II")
+                    this->insuranceCheck[1] = false;
+                else if (insuranceCode == "TI")
+                    this->insuranceCheck[2] = false;
+				else if (insuranceCode == "FC")
+					this->insuranceCheck[3] = false;
+                deleted = true;
+				continue;
+			}
+			else {
+				newInsuranceFile << user << " " << insuranceType << " " << duration << " " << payableAmount << " " << paymentStatus << std::endl;
+			}
+				
+         }
+    }
+	
+    insuranceFile.close();
+    newInsuranceFile.close();
+	
+    remove("insuranceDetails.txt");
+    rename("newInsuranceFile.txt", "insuranceDetails.txt");
+}
+
 void CustomerAccount::submitClaims() {
     bool back = false;
     std::string user = this->getUsername(), input = "";
@@ -497,6 +562,12 @@ void CustomerAccount::submitClaims() {
                 std::getline(std::cin, input);
 				CollisionInsurance newCollisionInsurance;
                 newCollisionInsurance.submitCarDamages(user, input);
+                if (this->insuranceCheck[0] == true) {
+                    deleteInsuranceDetails("CI");
+                }
+                else if (this->insuranceCheck[3] == true) {
+                    deleteInsuranceDetails("FC");
+                }
             }
             else {
                 std::cout << "You have not bought collision insurance." << std::endl;
@@ -511,6 +582,12 @@ void CustomerAccount::submitClaims() {
                 std::getline(std::cin, input);
                 InjuryInsurance newInjuryInsurance;
                 newInjuryInsurance.submitInjuries(user, input);
+                if (this->insuranceCheck[1] == true) {
+                    deleteInsuranceDetails("II");
+                }
+                else if (this->insuranceCheck[3] == true) {
+                    deleteInsuranceDetails("FC");
+                }
             }
             else {
                 std::cout << "You have not bought injury insurance." << std::endl;
@@ -525,6 +602,12 @@ void CustomerAccount::submitClaims() {
                 std::getline(std::cin, input);
                 TheftInsurance newTheftInsurance;
                 newTheftInsurance.submitStolenItems(user, input);
+                if (this->insuranceCheck[2] == true) {
+                    deleteInsuranceDetails("TI");
+                }
+                else if (this->insuranceCheck[3] == true) {
+                    deleteInsuranceDetails("FC");
+                }
             }
             else {
                 std::cout << "You have not bought theft insurance." << std::endl;
@@ -533,15 +616,21 @@ void CustomerAccount::submitClaims() {
         }
         case 4:
         {
+			std::cout << std::endl << "Car Damages: " << std::endl;
             CollisionInsurance newCollisionInsurance;
             newCollisionInsurance.showCarDamages(user);
+
+			std::cout << std::endl << "Injuries: " << std::endl;
             InjuryInsurance newInjuryInsurance;
             newInjuryInsurance.showInjuries(user);
+
+			std::cout << std::endl << "Stolen Items: " << std::endl;
             TheftInsurance newTheftInsurance;
             newTheftInsurance.showStolenItems(user);
             break;
         }
         case 5:
+            readInsuranceDetails();
             back = true;
             system("cls");
             break;

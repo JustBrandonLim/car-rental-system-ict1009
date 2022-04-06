@@ -1,2 +1,0 @@
-cust CI 15 150 0
-cust II 15 300 0

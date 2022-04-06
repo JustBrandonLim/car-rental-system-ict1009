@@ -28,6 +28,7 @@ public:
 	void displayInsurance();
 	void storeInsuranceDetails();
 	void readInsuranceDetails();
+	void deleteInsuranceDetails(std::string insuranceCode);
 	void submitClaims();
 	void doReserve();
 	void doUnreserved();
