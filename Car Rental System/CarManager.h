@@ -12,11 +12,11 @@ using namespace std;
 class CarManager
 {
 private:
-	vector<Car> cars;
+	vector<Car*> cars;
 public:
 	CarManager();
 	void loadCars();
-	vector<Car> getCars();
+	vector<Car*> getCars();
 	Car* getCarByIndex(int id);
 	Car* getCarByCarPlate(string carPlate);
 	void addCar(string carPlate, string model, string transmission, double rentalRate, bool available);

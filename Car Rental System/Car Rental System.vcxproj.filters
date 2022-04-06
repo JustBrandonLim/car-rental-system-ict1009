@@ -10,43 +10,59 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{fed2a0b5-a79b-4ccf-8ec6-6afd1557eb69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Account">
+      <UniqueIdentifier>{cadf9b5a-e2a0-4009-9fa7-e3ba1afe5ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Account">
+      <UniqueIdentifier>{b162bba2-ff24-4140-bd05-801f533e4e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Car">
+      <UniqueIdentifier>{d1392eb5-ca52-4e9d-a33b-226d663f953d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Car">
+      <UniqueIdentifier>{1702922e-0f51-448c-a386-601875b91f67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu">
+      <UniqueIdentifier>{e5aa6979-1615-4c90-a514-a62bb0a4cb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{86c8ba5d-bf6a-4ad4-b5ad-4dc4b16e5ebb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MenuManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="AccountManager.cpp">
+      <Filter>Source Files\Account</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="CarManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Account</Filter>
     </ClCompile>
     <ClCompile Include="Car.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Car</Filter>
     </ClCompile>
-    <ClCompile Include="AdminAccount.cpp" />
+    <ClCompile Include="CarManager.cpp">
+      <Filter>Source Files\Car</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuManager.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MenuManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Account.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Account</Filter>
     </ClInclude>
     <ClInclude Include="AccountManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CarManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Account</Filter>
     </ClInclude>
     <ClInclude Include="Car.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Car</Filter>
     </ClInclude>
-    <ClInclude Include="AdminAccount.h" />
+    <ClInclude Include="CarManager.h">
+      <Filter>Header Files\Car</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuManager.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="accounts.txt">

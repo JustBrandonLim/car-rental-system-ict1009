@@ -9,6 +9,11 @@ Car::Car(string carPlate, string model, string transmission, double rentalRate, 
 	this->available = available;
 }
 
+Car::~Car() 
+{
+	cout << "* " << this->carPlate << " has been deleted." << endl;
+}
+
 string Car::getCarPlate()
 {
 	return this->carPlate;

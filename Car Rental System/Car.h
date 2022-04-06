@@ -15,6 +15,7 @@ private:
 	bool available;
 public:
 	Car(string carPlate, string model, string transmission, double rentalRate, bool available);
+	~Car();
 	string getCarPlate();
 	string getModel();
 	string getTransmission();

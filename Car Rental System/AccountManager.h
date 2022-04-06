@@ -12,7 +12,7 @@ using namespace std;
 class AccountManager
 {
 private:
-	vector<Account> accounts;
+	vector<Account*> accounts;
 public:
 	AccountManager();
 	void loadAccounts();

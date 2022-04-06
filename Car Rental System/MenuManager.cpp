@@ -5,7 +5,7 @@ MenuManager::MenuManager(AccountManager* accountManager, CarManager* carManager,
 	this->menuState = menuState;
 	this->accountManager = accountManager;
 	this->carManager = carManager;
-	//this->account = NULL;
+	this->account = NULL;
 }
 
 MenuState MenuManager::getMenuState()
@@ -164,7 +164,13 @@ void MenuManager::customerMenu()
 		break;
 	case 1:
 	{
+		if (this->carManager->getCars().size() != 0)
+		{
+			this->carManager->displayCars();
 
+		}
+		else
+			cout << "* There are no cars left to reserve." << endl;
 	}
 		break;
 	case 2:
@@ -186,8 +192,9 @@ void MenuManager::adminMenu()
 	cout << "===== Car Rental System =====" << endl;
 	cout << "1. Add a car" << endl;
 	cout << "2. Remove a car" << endl;
-	cout << "3. Log out" << endl;
-	cout << "4. Exit" << endl;
+	cout << "3. Display the list of cars" << endl;
+	cout << "4. Log out" << endl;
+	cout << "5. Exit" << endl;
 
 	cout << "Please select an option: ";
 	int adminMenuSelection = -1;
@@ -232,25 +239,32 @@ void MenuManager::adminMenu()
 		break;
 	case 2:
 	{
-		this->carManager->displayCars();
-
-		cout << "Please enter the id to delete: ";
-		int id = -1;
-		cin >> id;
-
-		if (this->carManager->getCarByIndex(id) != NULL)
+		if (this->carManager->getCars().size() != 0)
 		{
-			this->carManager->removeCarByIndex(id);
+			this->carManager->displayCars();
 
-			cout << "* Car " << id << " has been deleted." << endl;
+			cout << "Please enter the ID to delete: ";
+			int id = -1;
+			cin >> id;
+
+			if (this->carManager->getCarByIndex(id) != NULL)
+				this->carManager->removeCarByIndex(id);
+			else
+				cout << "* Car does not exist!" << endl;
 		}
 		else
-			cout << "* Car does not exist!" << endl;
+			cout << "* There are no cars left to delete." << endl;
 
 		this->setMenuState(MenuState::AdminMenu);
 	}
 		break;
 	case 3:
+		if (this->carManager->getCars().size() != 0)
+			this->carManager->displayCars();
+		else
+			cout << "* There are no cars left to display." << endl;
+		break;
+	case 4:
 		cout << "* You have logged out successfully." << endl;
 		this->setMenuState(MenuState::MainMenu);
 		break;

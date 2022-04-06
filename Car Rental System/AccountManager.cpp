@@ -28,7 +28,7 @@ void AccountManager::loadAccounts()
 
 		}
 
-		this->accounts.push_back(Account(accountInformations[0], accountInformations[1], accountInformations[2], accountInformations[3], accountInformations[4], accountInformations[5] == "T" ? true : false));
+		this->accounts.push_back(new Account(accountInformations[0], accountInformations[1], accountInformations[2], accountInformations[3], accountInformations[4], accountInformations[5] == "T" ? true : false));
 	}
 
 	accounts.close();
@@ -36,11 +36,11 @@ void AccountManager::loadAccounts()
 
 Account* AccountManager::getAccountByUsername(string username)
 {
-	for (Account &account : this->accounts)
+	for (Account* account : this->accounts)
 	{
-		if (username == account.getUsername())
+		if (username == account->getUsername())
 		{
-			return &account;
+			return account;
 		}
 	}
 
@@ -55,16 +55,14 @@ void AccountManager::registerAccount(string username, string password, string na
 
 	accounts.close();
 
-	Account newAccount(username, password, name, dateOfBirth, address, false);
-
-	this->accounts.push_back(newAccount);
+	this->accounts.push_back(new Account(username, password, name, dateOfBirth, address, false));
 }
 
 bool AccountManager::loginAccount(string username, string password)
 {
-	for (Account &account : this->accounts)
+	for (Account* account : this->accounts)
 	{
-		if (username == account.getUsername() && password == account.getPassword())
+		if (username == account->getUsername() && password == account->getPassword())
 			return true;
 	}
 	
