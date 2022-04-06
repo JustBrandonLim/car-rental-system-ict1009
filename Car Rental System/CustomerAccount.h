@@ -29,4 +29,9 @@ public:
 	void storeInsuranceDetails();
 	void readInsuranceDetails();
 	void submitClaims();
+	void doReserve();
+	void doUnreserved();
+	void doDisplayCars();
+	void doCompare();
+	void doPayment();
 };
