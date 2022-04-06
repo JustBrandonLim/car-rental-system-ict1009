@@ -1,101 +1,44 @@
 #include "Car.h"
 
-Car::Car()
+Car::Car(string carPlate, string model, string transmission, double rentalRate, bool available)
 {
-
+	this->carPlate = carPlate;
+	this->model = model;
+	this->transmission = transmission;
+	this->rentalRate = rentalRate;
+	this->available = available;
 }
 
-Car::Car(std::string model, std::string plateNumber, double hourlyRate, double insurance) {
-    this->model = model;
-    this->plateNumber = plateNumber;
-    this->hourlyRate = hourlyRate;
-    this->insurance = insurance;
+string Car::getCarPlate()
+{
+	return this->carPlate;
 }
 
-void Car::setServicing() {
-    if (servicing == true)
-        servicing = false;
-    else
-        servicing = true;
+string Car::getModel()
+{
+	return this->model;
 }
 
-std::string Car::getModel() {
-    return this->model;
+string Car::getTransmission()
+{
+	return this->transmission;
 }
 
-std::string Car::getPlateNumber() {
-    return this->plateNumber;
+double Car::getRentalRate()
+{
+	return this->rentalRate;
 }
 
-double Car::getHourlyRate() {
-    return this->hourlyRate;
+bool Car::getAvailable()
+{
+	return this->available;
 }
 
-bool Car::getServicing() {
-    return servicing;
+void Car::displayCar()
+{
+	cout << "Car Plate: " << this->carPlate << endl;
+	cout << "Model: " << this->model << endl;
+	cout << "Transmission: " << this->transmission << endl;
+	cout << "Rental Rate: " << this->rentalRate << endl;
+	cout << "Available: " << (this->available ? "Yes" : "No") << endl;
 }
-
-void Car::displayInfo() {
-    std::cout << "Car Model: " << model << std::endl;
-    std::cout << "Car Plate Number: " << plateNumber << std::endl;
-    std::cout << "Hourly Rate: " << hourlyRate << "/hr" << std::endl;
-    if (getServicing() == true)
-        std::cout << "Car due for servicing." << std::endl;
-    else
-        std::cout << "Car serviced." << std::endl;
-
-}
-
-bool Car::operator>(Car x) {
-    return hourlyRate > x.hourlyRate ? true : false;
-}
-
-bool Car::operator==(Car x) {
-    return plateNumber == x.plateNumber ? true : false;
-}
-/*
-vector <Rental> Car::getRentals() {
-    return rentals;
-}
-
-void Car::displayRentals() {
-    std::cout << "Car Name | Car Plate | Rental hours | Total Payable " << std::endl;
-    for (int i = 0; i < rentals.size(); i++) {
-        std::cout << model << "\t" << plateNumber << "\t" << rentals.at(i).getHours() << "\t" << rentals.at(i).getTotalPayable() << std::endl;
-    }
-}
-double Car::getDayRate(){
-  return dayRate;
-}
-
-float Car::getCapacity(){
-  return capacity;
-}
-
-string Car::getTransmission(){
-  return transmission;
-}
-
-bool Car::getBooked(){
-  return booked;
-}
-
-
-void Car::setBooked(){
-  if (this->booked == false)
-    this->booked = true;
-  else
-    this->booked = false;
-}
-
-void Car::setRental(Rental rent){
-  int i = 0;
-  rentList[i] = rent;
-}
-
-//undone as need to find a way to access rentList to see if person rent before calculating
-
-double Car::calculateRate(){
-    return 0;
-}
-*/

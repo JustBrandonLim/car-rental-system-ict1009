@@ -1,24 +1,26 @@
 #pragma once
 
 #include <vector>
+#include <fstream>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
 #include "Car.h"
 
 class CarManager
 {
 private:
-	static CarManager* s_instance;
-	std::vector<Car> cars;
-	CarManager(){};
+	vector<Car> cars;
 public:
-	static CarManager* getInstance(){
-		if(!s_instance)
-			s_instance = new CarManager;
-		return s_instance;
-	}
-	std::vector<Car> getCars();
-	void addCar(Car);
-	void removeCar(Car);
-	void setServicing(Car);
-	Car getCarByModel(std::string);
+	CarManager();
+	void loadCars();
+	vector<Car> getCars();
+	Car getCarByIndex(int id);
+	Car getCarByCarPlate(string carPlate);
+	bool addCar(string carPlate, string model, string transmission, double rentalRate, bool available);
+	bool removeCarByIndex(int id);
 	void displayCars();
 };
+

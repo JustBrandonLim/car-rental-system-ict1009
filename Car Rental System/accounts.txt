@@ -1,0 +1,3 @@
+admin:test:Brandon Lim:03/12/1999:Singapore 123456:T:
+cust:test:John Doe:01/01/2000:Singapore 123456:F:
+cg:test:chun guan:01/01/1998:singapore:F:

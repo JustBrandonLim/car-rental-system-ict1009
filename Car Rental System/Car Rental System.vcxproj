@@ -140,36 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountManager.cpp" />
     <ClCompile Include="Car.cpp" />
-    <ClCompile Include="CollisionInsurance.cpp" />
-    <ClCompile Include="FullCoverageInsurance.cpp" />
-    <ClCompile Include="InjuryInsurance.cpp" />
-    <ClCompile Include="Insurance.cpp" />
-    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="CarManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Rental.cpp" />
-    <ClCompile Include="RentalManager.cpp" />
-    <ClCompile Include="TheftInsurance.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountManager.h" />
     <ClInclude Include="Car.h" />
-    <ClInclude Include="CollisionInsurance.h" />
-    <ClInclude Include="CustomerAccount.h" />
-    <ClInclude Include="DateTime.h" />
-    <ClInclude Include="FullCoverageInsurance.h" />
-    <ClInclude Include="InjuryInsurance.h" />
-    <ClInclude Include="Insurance.h" />
-    <ClInclude Include="Login.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Rental.h" />
-    <ClInclude Include="RentalManager.h" />
-    <ClInclude Include="TheftInsurance.h" />
+    <ClInclude Include="CarManager.h" />
+    <ClInclude Include="MenuManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="AdminDatabase.txt" />
-    <Text Include="database.txt" />
+    <Text Include="accounts.txt" />
+    <Text Include="cars.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,31 +1,31 @@
 #pragma once
+
+#include <string>
 #include <iostream>
-//#include <vector>
-//#include "Rental.h"
 
-class Rental;
+using namespace std;
 
-class Car {
-    friend void addRental(Car, int);
-private:
-    std::string model;
-    std::string plateNumber;
-    double hourlyRate;
-    //vector <Rental> rentals;
-    bool servicing = false;
-    double insurance;
-public:
-    Car();
-    Car(std::string, std::string, double, double);
-    ~Car() {}; //cout << model << " deleted" << endl;}
-    void setServicing();
-    std::string getModel();
-    std::string getPlateNumber();
-    //vector <Rental> getRentals();
-    double getHourlyRate();
-    bool getServicing();
-    void displayInfo();
-    //void displayRentals();
-    bool operator >(Car);
-    bool operator ==(Car);
+enum class CarStatus
+{
+	Available = 0,
+	Reserved = 1
 };
+
+class Car
+{
+private:
+	string carPlate;
+	string model;
+	string transmission;
+	double rentalRate;
+	bool available;
+public:
+	Car(string carPlate, string model, string transmission, double rentalRate, bool available);
+	string getCarPlate();
+	string getModel();
+	string getTransmission();
+	double getRentalRate();
+	bool getAvailable();
+	void displayCar();
+};
+

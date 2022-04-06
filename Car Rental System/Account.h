@@ -13,11 +13,10 @@ private:
 	string dateOfBirth;
 	string address;
 public:
-	Account();
-	Account(string, string, string, string, string);
+	Account(string username, string password, string name, string dateOfBirth, string address);
 	string getUsername();
+	string getPassword();
 	string getName();
 	string getDateOfBirth();
 	string getAddress();
 };
-

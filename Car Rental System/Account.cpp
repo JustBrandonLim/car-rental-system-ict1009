@@ -1,10 +1,5 @@
 #include "Account.h"
 
-Account::Account()
-{
-
-}
-
 Account::Account(string username, string password, string name, string dateOfBirth, string address)
 {
 	this->username = username;
@@ -17,6 +12,11 @@ Account::Account(string username, string password, string name, string dateOfBir
 string Account::getUsername()
 {
 	return this->username;
+}
+
+string Account::getPassword()
+{
+	return this->password;
 }
 
 string Account::getName()

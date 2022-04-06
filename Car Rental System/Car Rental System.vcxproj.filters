@@ -1,129 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Account">
-      <UniqueIdentifier>{b53dba8e-37eb-4f3c-8662-85136a42aa0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Account\AdminAccount">
-      <UniqueIdentifier>{bf7e5ce6-8053-4fdd-8a4d-983c7b87f518}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Account\CustomerAccount">
-      <UniqueIdentifier>{b8e77359-edff-49fb-9748-f17823cf566c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Insurance">
-      <UniqueIdentifier>{ef4402e8-8eb6-409e-aa7f-38c4056b7fd8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Rental">
-      <UniqueIdentifier>{71383aed-b8e3-45cc-951c-81b087dea8e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="to-organize">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Insurance\FullCoverageInsurance">
-      <UniqueIdentifier>{dd89436a-eba1-4288-b97a-dcc42c5ca535}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Insurance\InjuryInsurance">
-      <UniqueIdentifier>{0bdc9b49-b619-4f6e-a2fd-472c61c78906}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Insurance\CollisionInsurance">
-      <UniqueIdentifier>{25a08d68-f812-4723-b7bb-05ec22255413}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Insurance\TheftInsurance">
-      <UniqueIdentifier>{9f16d94c-2aa7-4e31-aa83-d8dc59cd28d2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Rental\Rental">
-      <UniqueIdentifier>{0d6dd4cd-0093-4deb-beea-27dfae955894}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Others">
-      <UniqueIdentifier>{d998f400-ad74-4f13-9fb0-27ceb8d1eede}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{38a02506-a7dd-4a2b-990e-bf87bce7f2d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f355b6ec-2a73-440b-86a7-1403e4df5f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{fed2a0b5-a79b-4ccf-8ec6-6afd1557eb69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Menu.cpp">
-      <Filter>to-organize</Filter>
-    </ClCompile>
-    <ClCompile Include="Car.cpp">
-      <Filter>to-organize</Filter>
+    <ClCompile Include="MenuManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
-      <Filter>Account</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Insurance.cpp">
-      <Filter>Insurance</Filter>
-    </ClCompile>
-    <ClCompile Include="InjuryInsurance.cpp">
-      <Filter>Insurance\InjuryInsurance</Filter>
+    <ClCompile Include="AccountManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="TheftInsurance.cpp">
-      <Filter>Insurance\TheftInsurance</Filter>
+    <ClCompile Include="CarManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionInsurance.cpp">
-      <Filter>Insurance\CollisionInsurance</Filter>
-    </ClCompile>
-    <ClCompile Include="FullCoverageInsurance.cpp">
-      <Filter>Insurance\FullCoverageInsurance</Filter>
-    </ClCompile>
-    <ClCompile Include="Rental.cpp">
-      <Filter>Rental\Rental</Filter>
-    </ClCompile>
-    <ClCompile Include="RentalManager.cpp">
-      <Filter>Rental</Filter>
-    </ClCompile>
-    <ClCompile Include="Login.cpp">
-      <Filter>to-organize</Filter>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MenuManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Account.h">
-      <Filter>Account</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Insurance.h">
-      <Filter>Insurance</Filter>
+    <ClInclude Include="AccountManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InjuryInsurance.h">
-      <Filter>Insurance\InjuryInsurance</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>to-organize</Filter>
-    </ClInclude>
-    <ClInclude Include="TheftInsurance.h">
-      <Filter>Insurance\TheftInsurance</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionInsurance.h">
-      <Filter>Insurance\CollisionInsurance</Filter>
-    </ClInclude>
-    <ClInclude Include="FullCoverageInsurance.h">
-      <Filter>Insurance\FullCoverageInsurance</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomerAccount.h">
-      <Filter>Account\CustomerAccount</Filter>
-    </ClInclude>
-    <ClInclude Include="RentalManager.h">
-      <Filter>Rental</Filter>
+    <ClInclude Include="CarManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Car.h">
-      <Filter>to-organize</Filter>
-    </ClInclude>
-    <ClInclude Include="Rental.h">
-      <Filter>Rental\Rental</Filter>
-    </ClInclude>
-    <ClInclude Include="DateTime.h">
-      <Filter>Others</Filter>
-    </ClInclude>
-    <ClInclude Include="Login.h">
-      <Filter>to-organize</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="AdminDatabase.txt">
+    <Text Include="accounts.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="database.txt">
+    <Text Include="cars.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
