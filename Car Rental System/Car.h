@@ -5,12 +5,6 @@
 
 using namespace std;
 
-enum class CarStatus
-{
-	Available = 0,
-	Reserved = 1
-};
-
 class Car
 {
 private:
@@ -27,5 +21,6 @@ public:
 	double getRentalRate();
 	bool getAvailable();
 	void displayCar();
+	friend ostream& operator<<(ostream& cout, Car& car);
 };
 

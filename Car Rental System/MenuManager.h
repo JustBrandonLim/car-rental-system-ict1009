@@ -24,6 +24,7 @@ private:
 	MenuState menuState;
 	AccountManager* accountManager;
 	CarManager* carManager;
+	Account* account;
 public:
 	MenuManager(AccountManager* accountManager, CarManager* carManager, MenuState menuState = MenuState::MainMenu);
 	MenuState getMenuState();

@@ -17,10 +17,10 @@ public:
 	CarManager();
 	void loadCars();
 	vector<Car> getCars();
-	Car getCarByIndex(int id);
-	Car getCarByCarPlate(string carPlate);
-	bool addCar(string carPlate, string model, string transmission, double rentalRate, bool available);
-	bool removeCarByIndex(int id);
+	Car* getCarByIndex(int id);
+	Car* getCarByCarPlate(string carPlate);
+	void addCar(string carPlate, string model, string transmission, double rentalRate, bool available);
+	void removeCarByIndex(int id);
 	void displayCars();
 };
 

@@ -28,27 +28,26 @@ void AccountManager::loadAccounts()
 
 		}
 
-		this->accounts.push_back(Account(accountInformations[0], accountInformations[1], accountInformations[2], accountInformations[3], accountInformations[4]));
+		this->accounts.push_back(Account(accountInformations[0], accountInformations[1], accountInformations[2], accountInformations[3], accountInformations[4], accountInformations[5] == "T" ? true : false));
 	}
 
 	accounts.close();
 }
 
-/*vector<Account> AccountManager::getAccounts()
+Account* AccountManager::getAccountByUsername(string username)
 {
-	return this->accounts;
-}*/
-
-Account AccountManager::getAccountByUsername(string username)
-{
-	for (Account account : this->accounts)
+	for (Account &account : this->accounts)
 	{
 		if (username == account.getUsername())
-			return account;
+		{
+			return &account;
+		}
 	}
+
+	return NULL;
 }
 
-bool AccountManager::registerAccount(string username, string password, string name, string dateOfBirth, string address)
+void AccountManager::registerAccount(string username, string password, string name, string dateOfBirth, string address)
 {
 	ofstream accounts("accounts.txt", ofstream::app);
 
@@ -56,29 +55,18 @@ bool AccountManager::registerAccount(string username, string password, string na
 
 	accounts.close();
 
-	Account newAccount(username, password, name, dateOfBirth, address);
+	Account newAccount(username, password, name, dateOfBirth, address, false);
 
 	this->accounts.push_back(newAccount);
-
-	return true;
 }
 
 bool AccountManager::loginAccount(string username, string password)
 {
-	for (Account account : this->accounts)
+	for (Account &account : this->accounts)
 	{
 		if (username == account.getUsername() && password == account.getPassword())
 			return true;
 	}
 	
 	return false;
-}
-
-void AccountManager::displayAccounts()
-{
-	cout << "ID\tUsername\tName" << endl;
-	for (int index = 0; index < this->accounts.size(); index++)
-	{
-		cout << index << "\t" << this->accounts[index].getUsername() << "\t" << this->accounts[index].getName() << endl;
-	}
 }

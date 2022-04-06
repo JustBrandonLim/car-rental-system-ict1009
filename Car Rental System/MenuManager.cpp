@@ -5,6 +5,7 @@ MenuManager::MenuManager(AccountManager* accountManager, CarManager* carManager,
 	this->menuState = menuState;
 	this->accountManager = accountManager;
 	this->carManager = carManager;
+	//this->account = NULL;
 }
 
 MenuState MenuManager::getMenuState()
@@ -88,11 +89,14 @@ void MenuManager::loginMenu()
 
 	if (this->accountManager->loginAccount(username, password))
 	{
-		Account account = this->accountManager->getAccountByUsername(username);
+		this->account = this->accountManager->getAccountByUsername(username);
 		
-		cout << "* Welcome, " << account.getUsername() << "." << endl;
-
-		this->setMenuState(MenuState::AdminMenu);
+		cout << "* Welcome, " << account->getUsername() << "." << endl;
+		
+		if (account->getAdmin())
+			this->setMenuState(MenuState::AdminMenu);
+		else
+			this->setMenuState(MenuState::CustomerMenu);
 	}
 	else
 		cout << "* Invalid username or password! Please try again!" << endl;
@@ -124,22 +128,55 @@ void MenuManager::registerMenu()
 	string address = "";
 	getline(cin >> ws, address);
 
-	if (this->accountManager->registerAccount(username, password, name, dateOfBirth, address))
+	if (this->accountManager->getAccountByUsername(username) == NULL)
 	{
-		Account account = this->accountManager->getAccountByUsername(username);
+		this->accountManager->registerAccount(username, password, name, dateOfBirth, address);
+		
+		this->account = this->accountManager->getAccountByUsername(username);
 
-		cout << "* You have been registered, " << account.getUsername() << "." << endl;
-
-		this->setMenuState(MenuState::MainMenu);
+		cout << "* You have been registered, " << account->getUsername() << "." << endl;
 	}
 	else
-		cout << "* Something went wrong! Please try again!" << endl;
+		cout << "* Account already exists!" << endl;
+
+	this->setMenuState(MenuState::MainMenu);
 }
 
 void MenuManager::customerMenu()
 {
 	system("title Car Rental System - Customer");
-	cin.get();
+	
+	cout << "===== Car Rental System =====" << endl;
+	cout << "1. Reserve a car" << endl;
+	cout << "2. Cancel a reservation" << endl;
+	cout << "3. Purchase an insurance" << endl;
+	cout << "4. Log out" << endl;
+	cout << "5. Exit" << endl;
+
+	cout << "Please select an option: ";
+	int customerMenuSelection = -1;
+	cin >> customerMenuSelection;
+
+	switch (customerMenuSelection)
+	{
+	default:
+		exit(0);
+		break;
+	case 1:
+	{
+
+	}
+		break;
+	case 2:
+	{
+
+	}
+		break;
+	case 4:
+		cout << "* You have logged out successfully." << endl;
+		this->setMenuState(MenuState::MainMenu);
+		break;
+	}
 }
 
 void MenuManager::adminMenu()
@@ -179,18 +216,18 @@ void MenuManager::adminMenu()
 		double rentalRate = 0.0;
 		cin >> rentalRate;
 
-		if (this->carManager->addCar(carPlate, model, transmission, rentalRate, true))
+		if (this->carManager->getCarByCarPlate(carPlate) == NULL)
 		{
-			Car car = this->carManager->getCarByCarPlate(carPlate);
+			this->carManager->addCar(carPlate, model, transmission, rentalRate, true);
 
-			car.displayCar();
+			Car* car = this->carManager->getCarByCarPlate(carPlate);
 
-			cout << "* " << car.getCarPlate() << " has been added." << endl;
-
-			this->setMenuState(MenuState::AdminMenu);
+			cout << "* " << car->getCarPlate() << " has been added." << endl;
 		}
 		else
-			cout << "* Something went wrong! Please try again!" << endl;
+			cout << "* Car already exists!" << endl;
+
+		this->setMenuState(MenuState::AdminMenu);
 	}
 		break;
 	case 2:
@@ -201,14 +238,16 @@ void MenuManager::adminMenu()
 		int id = -1;
 		cin >> id;
 
-		if (this->carManager->removeCarByIndex(id))
+		if (this->carManager->getCarByIndex(id) != NULL)
 		{
-			cout << "* Car " << id << " has been deleted." << endl;
+			this->carManager->removeCarByIndex(id);
 
-			this->setMenuState(MenuState::AdminMenu);
+			cout << "* Car " << id << " has been deleted." << endl;
 		}
 		else
-			cout << "* Something went wrong! Please try again!" << endl;
+			cout << "* Car does not exist!" << endl;
+
+		this->setMenuState(MenuState::AdminMenu);
 	}
 		break;
 	case 3:

@@ -16,10 +16,8 @@ private:
 public:
 	AccountManager();
 	void loadAccounts();
-	//vector<Account> getAccounts();
-	Account getAccountByUsername(string username);
+	Account* getAccountByUsername(string username);
 	bool loginAccount(string username, string password);
-	bool registerAccount(string username, string password, string name, string dateOfBirth, string address);
-	void displayAccounts();
+	void registerAccount(string username, string password, string name, string dateOfBirth, string address);
 };
 

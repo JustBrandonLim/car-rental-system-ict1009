@@ -28,6 +28,7 @@
     <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdminAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuManager.h">
@@ -45,6 +46,7 @@
     <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AdminAccount.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="accounts.txt">

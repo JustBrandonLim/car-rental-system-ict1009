@@ -42,3 +42,8 @@ void Car::displayCar()
 	cout << "Rental Rate: " << this->rentalRate << endl;
 	cout << "Available: " << (this->available ? "Yes" : "No") << endl;
 }
+
+ostream& operator<<(ostream& out, Car& car) {
+	out << "\t" << car.getCarPlate() << "\t\t" << car.getModel() << "\t" << car.getTransmission() << "\t\t" << car.getRentalRate() << "\t\t" << (car.getAvailable() ? "Yes" : "No") << endl;
+	return out;
+}

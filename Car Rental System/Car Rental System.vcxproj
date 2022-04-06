@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="AccountManager.cpp" />
+    <ClCompile Include="AdminAccount.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarManager.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -149,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountManager.h" />
+    <ClInclude Include="AdminAccount.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarManager.h" />
     <ClInclude Include="MenuManager.h" />
