@@ -61,7 +61,7 @@ void RentalManager::cancelRentalByIndex(int id)
 
 void RentalManager::displayRentalsByAccountUsername(string username)
 {
-	cout << "ID\tRental Type\tCar Plate\tCar Model\tTransmission\tTotal Fees" << endl;
+	cout << "ID\tRental Type\tCar Plate\tTransmission\tCar Model\tTotal Fees" << endl;
 	for (int index = 0; index < this->rentals.size(); index++)
 	{
 		if (username == this->rentals[index]->getAccount()->getUsername())

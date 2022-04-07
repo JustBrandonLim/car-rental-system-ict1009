@@ -21,6 +21,6 @@ void HourlyRental::displayRental()
 }
 
 ostream& operator<<(ostream& out, HourlyRental& hourlyRental) {
-	out << "\t" << "Hourly\t\t" << hourlyRental.getCar()->getCarPlate() << "\t" << hourlyRental.getCar()->getTransmission() << "\t\t" << hourlyRental.getCar()->getModel() << "\t$" << hourlyRental.calculateTotalFees() << endl;
+	out << "\t" << "Hourly\t\t" << hourlyRental.getCar()->getCarPlate() << "\t\t" << hourlyRental.getCar()->getTransmission() << "\t\t" << hourlyRental.getCar()->getModel() << "\t$" << hourlyRental.calculateTotalFees() << endl;
 	return out;
 }
