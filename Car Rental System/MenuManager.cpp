@@ -167,47 +167,60 @@ void MenuManager::customerMenu()
 	{
 		if (this->carManager->getCars().size() != 0)
 		{
-			this->carManager->displayCars();
+			do{
+				system("CLS");
+				this->carManager->displayCars();
 
-			cout << "Please enter the ID to reserve: ";
-			int id = -1;
-			cin >> id;
+				cin.clear();
+				cin.ignore();
 
-			if (this->carManager->getCarByIndex(id) != NULL)
-			{
-				Car* car = this->carManager->getCarByIndex(id);
-
-				if (car->getAvailable())
+				cout << "Please enter the ID to reserve: ";
+				int id = -1;
+				cin >> id;
+				if (cin.fail())
 				{
-					cout << "1. Hourly Reservation" << endl;
-					cout << "2. Daily Reservation" << endl;
+					cout << "* Invalid input!" << endl;
+				}
+				else if (this->carManager->getCarByIndex(id) != NULL)
+				{
+					Car* car = this->carManager->getCarByIndex(id);
 
-					cout << "Please select an option: ";
-					int reservationTypeSelection = -1;
-					cin >> reservationTypeSelection;
-
-					if (reservationTypeSelection == 1)
+					if (car->getAvailable())
 					{
-						cout << "Please enter your hours: ";
-						int hours = -1;
-						cin >> hours;
+						cout << "1. Hourly Reservation" << endl;
+						cout << "2. Daily Reservation" << endl;
 
-						this->rentalManager->addHourlyRental(this->account, car, car->getRentalRate(), hours);
+						cout << "Please select an option: ";
+						int reservationTypeSelection = -1;
+						cin >> reservationTypeSelection;
+						if (reservationTypeSelection == 1)
+						{
+							cout << "Please enter your hours: ";
+							int hours = -1;
+							cin >> hours;
+
+							this->rentalManager->addHourlyRental(this->account, car, car->getRentalRate(), hours);
+						}
+						else if (reservationTypeSelection == 2)
+						{
+							cout << "Please enter your days: ";
+							int days = -1;
+							cin >> days;
+
+							this->rentalManager->addDailyRental(this->account, car, car->getRentalRate() * 24, days);
+						}
+						else
+						{
+							cout << "* Invalid option!" << endl;
+						}
 					}
 					else
-					{
-						cout << "Please enter your days: ";
-						int days = -1;
-						cin >> days;
-
-						this->rentalManager->addDailyRental(this->account, car, car->getRentalRate() * 24, days);
-					}
+						cout << "* This car has been reserved already!" << endl;
 				}
 				else
-					cout << "* This car has been reserved already!" << endl;
-			}
-			else
-				cout << "* Car does not exist!" << endl;
+					cout << "* Car does not exist!" << endl;
+
+			} while (cin.fail());
 		}
 		else
 			cout << "* There are no cars left to reserve!" << endl;
@@ -215,25 +228,37 @@ void MenuManager::customerMenu()
 		break;
 	case 2: //CANCEL A RESERVATION
 	{
-		this->rentalManager->displayRentalsByAccountUsername(this->account->getUsername());
 
-		cout << "Please enter the ID to cancel: ";
-		int id = -1;
-		cin >> id;
-
-		if (this->rentalManager->getRentalByIndex(id) != NULL)
+		do
 		{
-			Rental* rental = this->rentalManager->getRentalByIndex(id);
-			if (rental->getAccount()->getUsername() == this->account->getUsername())
+			system("CLS");
+			this->rentalManager->displayRentalsByAccountUsername(this->account->getUsername());
+
+			cin.clear();
+			cin.ignore();
+
+			cout << "Please enter the ID to cancel: ";
+			int id = -1;
+			cin >> id;
+			if (cin.fail())
 			{
-				this->rentalManager->cancelRentalByIndex(id);
+				cout << "* Invalid input!" << endl;
+			}
+			else if (this->rentalManager->getRentalByIndex(id) != NULL)
+			{
+				Rental* rental = this->rentalManager->getRentalByIndex(id);
+				if (rental->getAccount()->getUsername() == this->account->getUsername())
+				{
+					this->rentalManager->cancelRentalByIndex(id);
+				}
+				else
+					cout << "* Reservation does not belong to you!" << endl;
+
 			}
 			else
-				cout << "* Reservation does not belong to you!" << endl;
+				cout << "* Reservation does not exist!" << endl;
+		} while (cin.fail());
 
-		}
-		else
-			cout << "* Reservation does not exist!" << endl;
 	}
 		break;
 	case 3:
@@ -302,16 +327,27 @@ void MenuManager::adminMenu()
 	{
 		if (this->carManager->getCars().size() != 0)
 		{
-			this->carManager->displayCars();
+			do
+			{
+				system("CLS");
+				this->carManager->displayCars();
 
-			cout << "Please enter the ID to delete: ";
-			int id = -1;
-			cin >> id;
+				cin.clear();
+				cin.ignore();
 
-			if (this->carManager->getCarByIndex(id) != NULL)
-				this->carManager->removeCarByIndex(id);
-			else
-				cout << "* Car does not exist!" << endl;
+				cout << "Please enter the ID to delete: ";
+				int id = -1;
+				cin >> id;
+				if (cin.fail())
+				{
+					cout << "* Invalid input!" << endl;
+				}
+				else if (this->carManager->getCarByIndex(id) != NULL)
+					this->carManager->removeCarByIndex(id);
+				else
+					cout << "* Car does not exist!" << endl;
+			} while (cin.fail());
+
 		}
 		else
 			cout << "* There are no cars left to delete." << endl;
