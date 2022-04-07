@@ -57,31 +57,48 @@ Car* CarManager::getCarByCarPlate(string carPlate)
 
 void CarManager::addCar(string carPlate, string model, string transmission, double rentalRate, bool available)
 {
-	ofstream cars("cars.txt", ofstream::app);
 
-	cars << carPlate << ":" << model << ":" << transmission << ":" << rentalRate << ":" << (available == true ? "T" : "F") << ":" << endl;
+	try
+	{
+		ofstream cars("cars.txt", ofstream::app);
 
-	cars.close();
+		cars << carPlate << ":" << model << ":" << transmission << ":" << rentalRate << ":" << (available == true ? "T" : "F") << ":" << endl;
 
-	//Car newCar(carPlate, model, transmission, rentalRate, available);
+		cars.close();
 
-	this->cars.push_back(new Car(carPlate, model, transmission, rentalRate, available));
+		//Car newCar(carPlate, model, transmission, rentalRate, available);
+
+		this->cars.push_back(new Car(carPlate, model, transmission, rentalRate, available));
+	}
+	catch (std::exception const& e)
+	{
+		cout << "There was an error: " << e.what() << endl;
+	}
+
 }
 
 void CarManager::removeCarByIndex(int id)
 {
-	Car* car = this->getCarByIndex(id);
+	try
+	{
+		Car* car = this->getCarByIndex(id);
 
-	delete car;
+		delete car;
 
-	this->cars.erase(this->cars.begin() + id);
+		this->cars.erase(this->cars.begin() + id);
 
-	ofstream cars("cars.txt", ofstream::out | ofstream::trunc);
+		ofstream cars("cars.txt", ofstream::out | ofstream::trunc);
 
-	for (Car* car : this->cars)
-		cars << car->getCarPlate() << ":" << car->getModel() << ":" << car->getTransmission() << ":" << car->getRentalRate() << ":" << (car->getAvailable() == true ? "T" : "F") << ":" << endl;
+		for (Car* car : this->cars)
+			cars << car->getCarPlate() << ":" << car->getModel() << ":" << car->getTransmission() << ":" << car->getRentalRate() << ":" << (car->getAvailable() == true ? "T" : "F") << ":" << endl;
 
-	cars.close();
+		cars.close();
+	}
+	catch (std::exception const& e)
+	{
+		cout << "There was an error: " << e.what() << endl;
+	}
+
 }
 
 void CarManager::displayCars() 
