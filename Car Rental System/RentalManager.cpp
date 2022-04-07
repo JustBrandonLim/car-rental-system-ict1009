@@ -52,6 +52,8 @@ void RentalManager::cancelRentalByIndex(int id)
 {
 	Rental* rental = this->getRentalByIndex(id);
 
+	rental->getCar()->setAvailable(true);
+
 	delete rental;
 
 	this->rentals.erase(this->rentals.begin() + id);
